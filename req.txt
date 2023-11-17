@@ -1,0 +1,3 @@
+Angular 16.2.5
+Angular material
+bootstrap
