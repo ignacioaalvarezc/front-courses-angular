@@ -13,8 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LoginComponent } from './components/login/login.component';
     AppComponent,
     NavbarComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
