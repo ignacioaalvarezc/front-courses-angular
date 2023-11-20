@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* GLOBAL STYLES */
 html, body { 
     height: 100%; 
 }
@@ -14,8 +13,16 @@ body {
     text-align: center;
 }
 
+.full-width {
+    width: 100%;
+}
+
 .wi80 {
     width: 80%;
+}
+
+.mt5 {
+    margin-top: 5px !important;
 }
 
 .ml20 {
@@ -48,12 +55,4 @@ body {
 
 .mb10 {
     margin-bottom: 10px !important;
-}
-
-.ml130 {
-    margin-left: 130px !important;
-}
-
-.mr180 {
-    margin-right: 180px !important;
 }

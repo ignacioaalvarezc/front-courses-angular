@@ -4,21 +4,14 @@
     mat-icon-button class="example-icon" 
     arial-label="Example icon-button with menu icon">
         <mat-icon>menu_books</mat-icon>
+        
     </a>
-
-    <span>Portal de exámenes</span>
+    <span class="mt5 fs10">Portal de exámenes</span>
 
     <span class="example-spacer"></span>
-    <a 
+    <button
     [routerLink] = "'/login'" 
-    mat-icon-button class = "example-icon favorite-icon" 
-    aria-label = "Example icon-button with heart icon">
-        Iniciar sesión
-    </a>
-    <a 
-    [routerLink] = "'/signup'" 
-    mat-icon-button class = "example-icon favorite-icon mr180 ml130" 
-    aria-label = "Example icon-button with heart icon">
-        Crear cuenta
-    </a>
+    mat-button class = "example-icon favorite-icon mt5">
+       <span class="fs10">Iniciar sesión</span> 
+</button>
 </mat-toolbar>
