@@ -7,15 +7,15 @@
                         <img src="../../../assets/images/login.png" width="100" height="100">
                     </div>
                     <h1 class="text-center">Inicio de sesión</h1>
-                    <form action="">
+                    <form (ngSubmit)="formSubmit()">
                         <mat-form-field class="wi80 center" appearance="outline">
                             <mat-label>Nombre de usuario</mat-label>
-                            <input required matInput placeholder = "Ingrese su nombre de usuario">
+                            <input [(ngModel)] = "loginData.username" name = "username" required matInput placeholder = "Ingrese su nombre de usuario">
                             <mat-hint>Ingrese su nombre de usuario.</mat-hint>
                         </mat-form-field>
                         <mat-form-field class="wi80 mt20 center" appearance="outline">
                             <mat-label>Contraseña</mat-label>
-                            <input required type="password" matInput placeholder = "Ingrese su contraseña">
+                            <input [(ngModel)] = "loginData.password" name = "password" required type="password" matInput placeholder = "Ingrese su contraseña">
                             <mat-hint>Ingrese su contraseña.</mat-hint>
                         </mat-form-field>
                         <br><br>
