@@ -39,10 +39,26 @@ export class LoginComponent implements OnInit {
         console.log(data);
         this.loginService.loginUser(data.token);
         this.loginService.getCurrentUser().subscribe((user:any) => {
+          this.loginService.setUser(user);
           console.log(user);
+
+          if (this.loginService.getUserRole() == "ADMIN") {
+            // DASHBOARD ADMIN
+            window.location.href = '/admin';
+          }
+          else if (this.loginService.getUserRole() == "USER") {
+            // USER DASHBOARD
+            window.location.href = '/user-dashboard';
+          }
+          else {
+            this.loginService.logout();
+          }
         })
       }, (error) => {
         console.log(error);
+        this.snack.open('Detalles inválidos, vuelva a intentarlo', 'Aceptar', {
+          duration: 3000
+        })
       }
     )
   }
