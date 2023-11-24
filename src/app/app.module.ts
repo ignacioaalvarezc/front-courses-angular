@@ -19,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { authInterceptorProviders } from './services/auth.interceptor';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { HomeComponent } from './pages/home/home.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
