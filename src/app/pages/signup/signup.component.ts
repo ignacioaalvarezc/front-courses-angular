@@ -19,7 +19,8 @@ export class SignupComponent implements OnInit {
     phoneNumber : ''
   }
 
-  constructor(private userService:UserService, private snack:MatSnackBar) {}
+  constructor(private userService:UserService, 
+              private snack:MatSnackBar) {}
 
   ngOnInit(): void {
 
@@ -38,7 +39,7 @@ export class SignupComponent implements OnInit {
     }
 
     for (const field of requiredFields) {
-      if (!this.user[field] || this.user[field].trim() ==='') {
+      if (!this.user[field] || (typeof this.user[field] === 'string' && this.user[field].trim() === '')) {
         this.snack.open('El campo ' + fieldNames[field] + ' es requerido.', 'Aceptar', {
           duration : 3000,
           verticalPosition: 'top',

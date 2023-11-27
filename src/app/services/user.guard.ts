@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class UserGuard implements CanActivate {
 
-  constructor(private loginService:LoginService,private router:Router){
+  constructor(private loginService:LoginService,
+              private router:Router){
 
   }
 
@@ -21,6 +22,7 @@ export class UserGuard implements CanActivate {
 
       this.router.navigate(['login']);
       return false;
+
   }
 
 }

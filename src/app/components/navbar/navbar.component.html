@@ -16,22 +16,13 @@
         arial-label="Example icon-button with menu icon">
        <span class="fs10">Iniciar sesión</span> 
     </button>
-    <!--
     <button
-        *ngIf="!login.isLoggedIn()"
-        [routerLink] = "'/signup'" 
-        mat-button class = "example-icon favorite-icon mt5"
-        arial-label="Example icon-button with menu icon">
-        <span class="fs10">Registrar</span> 
-    </button>
-    -->
-    <button
-        *ngIf="login.isLoggedIn()"
+        *ngIf="login.isLoggedIn() && user"
         mat-button
         style = "margin-right: 30px;"
         class = "example-icon favorite-icon mt5"
         arial-label="Example icon-button with menu icon">
-        <span class="fs10">{{ login.getUser().user?.username | titlecase }}</span>
+        <span class="fs10">{{ user.username | titlecase }}</span>
     </button>
     <button
         *ngIf="login.isLoggedIn()"

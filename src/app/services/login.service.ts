@@ -17,9 +17,14 @@ export class LoginService {
     return this.http.post(`${baserUrl}/generate-token`, loginData);
   }
 
+  public getCurrentUser() {
+    return this.http.get(`${baserUrl}/current-user`);
+  }
+
   // INICIAR SESION GUARDANDO EL TOKEN EN EL LOCALSTORAGE.
   public loginUser(token:any) {
     localStorage.setItem('token', token);
+    return true;
   }
 
   public isLoggedIn() {
@@ -63,7 +68,5 @@ export class LoginService {
     return user.authorities[0].authority;
   }
 
-  public getCurrentUser() {
-    return this.http.get(`${baserUrl}/current-user`);
-  }
+  
 }

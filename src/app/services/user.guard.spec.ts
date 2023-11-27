@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { UserGuard } from './user.guard';
 
-describe('NormalGuard', () => {
+describe('UserGuard', () => {
   let guard: UserGuard;
 
   beforeEach(() => {
