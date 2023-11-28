@@ -13,4 +13,16 @@
 .table tr td {
     padding: 15px 10px;
     border: 0.5px solid gainsboro;
+    width: 33%;
+    box-sizing: border-box;
+}
+
+table tr td:nth-child(2) {
+    width: 67%;
+}
+
+.buttons-profile {
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
