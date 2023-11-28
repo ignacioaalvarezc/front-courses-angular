@@ -1,35 +1,40 @@
 <mat-card>
-    <h1 class="text-center mt20">Datos personales</h1>
+    <h2 class="text-center mt10 m4">DATOS PERSONALES</h2>
+    <div class="divider"></div>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="container">
-                <div class="text-center">
+                <div class="text-center mt12">
                     <img src="../../../assets/images/default-profile.jpg"
                      alt="Perfil" class="profile-image">
-                     <h1 class="mt20">Ignacio Alejandro Alvarez Calderon</h1>
+                     <h1 class="mt10">{{ user.name | titlecase }} {{ user.lastName | titlecase }}</h1>
                 </div>
                 <div class="row">
-                    <div class="col-md-10 offset-md-1">
+                    <div class="col-md-10 offset-md-1 mt10">
                         <table class="table text-center">
                             <tr>
                                 <td>Nombre de usuario</td>
-                                <td>ignacio</td>
+                                <td>{{ user.username }}</td>
                             </tr>
                             <tr>
                                 <td>ID</td>
-                                <td>324342</td>
+                                <td>{{ user.userId }}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{ user.email }}</td>
                             </tr>
                             <tr>
                                 <td>Telefono</td>
-                                <td>34235245</td>
+                                <td>{{ user.phoneNumber }}</td>
                             </tr>
                             <tr>
                                 <td>Rol</td>
-                                <td>Administrador</td>
+                                <td>{{ user.authorities[0].authority }}</td>
                             </tr>
                             <tr>
                                 <td>Estado</td>
-                                <td>Activo</td>
+                                <td>{{ user.enabled ? "Activo" : "No activo" }}</td>
                             </tr>
                         </table>
                     </div>

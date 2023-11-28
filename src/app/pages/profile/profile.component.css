@@ -26,3 +26,18 @@ table tr td:nth-child(2) {
     align-items: center;
     justify-content: center;
 }
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+    margin: 2px 0;
+}
+
+.m4{
+    margin-bottom: 4px;
+}
+
+.mt12{
+    margin-top: 12px;
+}

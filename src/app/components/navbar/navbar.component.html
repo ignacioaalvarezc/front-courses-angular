@@ -3,7 +3,7 @@
     [routerLink] = "'/'"
     mat-icon-button class="example-icon" 
     arial-label="Example icon-button with menu icon">
-        <mat-icon>menu_books</mat-icon>
+        <mat-icon>library_books</mat-icon>
         
     </a>
     <span class="mt5 fs10">Portal de exámenes</span>
@@ -21,7 +21,8 @@
         mat-button
         style = "margin-right: 30px;"
         class = "example-icon favorite-icon mt5"
-        arial-label="Example icon-button with menu icon">
+        arial-label="Example icon-button with menu icon"
+        routerLink="/admin/profile">
         <span class="fs10">{{ user.username | titlecase }}</span>
     </button>
     <button
