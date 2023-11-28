@@ -8,6 +8,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AdminGuard } from './services/admin.guard';
 import { UserGuard } from './services/user.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path:'profile',
         component:ProfileComponent
+      },
+      {
+        path: '',
+        component: WelcomeComponent
       }
     ]
   },
