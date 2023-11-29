@@ -25,6 +25,22 @@ body {
     margin-top: 5px !important;
 }
 
+.ml10 {
+    margin-left: 10px !important;
+}
+
+.mr10 {
+    margin-right: 10px !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
 .ml20 {
     margin-left: 20px !important;
 }
@@ -41,18 +57,6 @@ body {
     margin-bottom: 20px !important;
 }
 
-.ml10 {
-    margin-left: 10px !important;
-}
-
-.mr10 {
-    margin-right: 10px !important;
-}
-
-.mt10 {
-    margin-top: 10px !important;
-}
-
-.mb10 {
-    margin-bottom: 10px !important;
+.mb40{
+    margin-bottom: 40px;
 }
