@@ -17,4 +17,8 @@ export class UserService {
   public addUser(user:any): Observable<any> {
     return this.http.post(`${baserUrl}/users/`, user);
   }
+
+  public saveAdmin(user:any): Observable<any> {
+    return this.http.post(`${baserUrl}/users/save-admin`, user);
+  }
 }

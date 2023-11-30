@@ -29,6 +29,10 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/categories/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
 import { ViewUsersComponent } from './pages/admin/users/view-users/view-users.component';
+import { AddUsersComponent } from './pages/admin/users/view-users/add-users/add-users.component';
+import { ExamsComponent } from './pages/admin/exams/exams/exams.component';
+import { ViewExamsComponent } from './pages/admin/exams/view-exams/view-exams.component';
+import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.component';
 
 
 @NgModule({
@@ -45,7 +49,11 @@ import { ViewUsersComponent } from './pages/admin/users/view-users/view-users.co
     WelcomeComponent,
     ViewCategoriesComponent,
     AddCategoryComponent,
-    ViewUsersComponent
+    ViewUsersComponent,
+    AddUsersComponent,
+    ExamsComponent,
+    ViewExamsComponent,
+    AddExamsComponent
   ],
   imports: [
     BrowserModule,
