@@ -1,1 +1,45 @@
-<p>add-exams works!</p>
+<mat-card class="card">
+    <h2 class="text-center mt10 mb4">AGREGAR NUEVO EXÁMEN</h2>
+    <mat-divider class="divider"></mat-divider>
+    <div class="row mt40">
+        <div class="col md-8 offset-md-2">
+            <form>
+                <mat-form-field class="wi80" appearance="fill">
+                    <mat-label>Título</mat-label>
+                    <input type="text"
+                    name="tittle"
+                    placeholder="Ingrese el título del exámen"
+                    matInput>
+                </mat-form-field>
+                <mat-form-field class="wi80" appearance="fill">
+                    <mat-label>Descripción</mat-label>
+                    <textarea type="text"
+                    name="description"
+                    placeholder="Ingrese la descripción"
+                    matInput
+                    rows="8"></textarea>
+                </mat-form-field>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="wi80" appearance="fill">
+                            <mat-label>Puntaje máximos</mat-label>
+                            <input type="text"
+                            name="puntajeMaximo"
+                            placeholder="Ingrese la cantidad de puntos máximos"
+                            matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6 ml-10">
+                        <mat-form-field class="wi80" appearance="fill">
+                            <mat-label>Número de preguntas</mat-label>
+                            <input type="text"
+                            name="numeroDePreguntas"
+                            placeholder="Ingrese la cantidad de preguntas"
+                            matInput>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-card>

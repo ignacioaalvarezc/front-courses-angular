@@ -14,6 +14,7 @@ import { AddCategoryComponent } from './pages/admin/categories/add-category/add-
 import { ViewUsersComponent } from './pages/admin/users/view-users/view-users.component';
 import { AddUsersComponent } from './pages/admin/users/view-users/add-users/add-users.component';
 import { ViewExamsComponent } from './pages/admin/exams/view-exams/view-exams.component';
+import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
       {
         path: 'view-exams',
         component: ViewExamsComponent
+      },
+      {
+        path: 'add-exams',
+        component: AddExamsComponent
       }
     ]
   },
