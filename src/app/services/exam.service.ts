@@ -1,9 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import baserUrl from './helper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExamService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  public listExams() {
+    return this.http.get(`${baserUrl}/exams/`);
+  }
+
+  
 }

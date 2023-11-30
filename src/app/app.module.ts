@@ -30,7 +30,6 @@ import { ViewCategoriesComponent } from './pages/admin/categories/view-categorie
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
 import { ViewUsersComponent } from './pages/admin/users/view-users/view-users.component';
 import { AddUsersComponent } from './pages/admin/users/view-users/add-users/add-users.component';
-import { ExamsComponent } from './pages/admin/exams/exams/exams.component';
 import { ViewExamsComponent } from './pages/admin/exams/view-exams/view-exams.component';
 import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.component';
 
@@ -51,7 +50,6 @@ import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.compo
     AddCategoryComponent,
     ViewUsersComponent,
     AddUsersComponent,
-    ExamsComponent,
     ViewExamsComponent,
     AddExamsComponent
   ],
