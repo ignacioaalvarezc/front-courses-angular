@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -62,6 +64,8 @@ import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.compo
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    MatSelectModule,
+    MatSlideToggleModule,
     MatCardModule,
     MatToolbarModule,
     MatIconModule,

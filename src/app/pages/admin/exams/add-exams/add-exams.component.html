@@ -6,14 +6,18 @@
             <form>
                 <mat-form-field class="wi80" appearance="fill">
                     <mat-label>Título</mat-label>
-                    <input type="text"
+                    <input 
+                    [(ngModel)]= "examData.title"
+                    type="text"
                     name="tittle"
                     placeholder="Ingrese el título del exámen"
                     matInput>
                 </mat-form-field>
                 <mat-form-field class="wi80" appearance="fill">
                     <mat-label>Descripción</mat-label>
-                    <textarea type="text"
+                    <textarea 
+                    [(ngModel)]= "examData.description"
+                    type="text"
                     name="description"
                     placeholder="Ingrese la descripción"
                     matInput
@@ -23,7 +27,9 @@
                     <div class="col-md-6">
                         <mat-form-field class="wi80" appearance="fill">
                             <mat-label>Puntaje máximos</mat-label>
-                            <input type="text"
+                            <input 
+                            [(ngModel)]= "examData.maxScore"
+                            type="text"
                             name="puntajeMaximo"
                             placeholder="Ingrese la cantidad de puntos máximos"
                             matInput>
@@ -32,14 +38,30 @@
                     <div class="col-md-6 ml-10">
                         <mat-form-field class="wi80" appearance="fill">
                             <mat-label>Número de preguntas</mat-label>
-                            <input type="text"
+                            <input 
+                            [(ngModel)]= "examData.questionsAmount"
+                            type="text"
                             name="numeroDePreguntas"
                             placeholder="Ingrese la cantidad de preguntas"
                             matInput>
                         </mat-form-field>
                     </div>
                 </div>
+                <mat-slide-toggle class="ml20" name="enabled" [(ngModel)]= "examData.enabled" color="primary">
+                    Estado de publicación
+                </mat-slide-toggle>
+                <mat-form-field appearance="fill" class="mt10 ml258 wi39">
+                    <mat-label>Categoría</mat-label>
+                    <mat-select name="category" [(ngModel)]= "examData.category.categoryId">
+                        <mat-option *ngFor= "let c of categories" [value]="c.categoryId">
+                            {{ c.tittle }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             </form>
         </div>
+    </div>
+    <div class="container mt40 text-center">
+        <button mat-raised-button color="primary">Guardar exámen</button>
     </div>
 </mat-card>
