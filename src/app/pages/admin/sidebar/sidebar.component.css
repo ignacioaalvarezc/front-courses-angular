@@ -7,8 +7,5 @@
 }
 
 .divider {
-    height: 1px;
-    width: 100%;
-    background-color: #ccc;
-    margin: -8px 0;
+    margin: -9px 15px;
 }

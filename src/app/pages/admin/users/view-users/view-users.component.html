@@ -1,15 +1,15 @@
 <mat-card class="card">
-    <h2 class="text-center mt10">LISTA DE CATEGORÍAS</h2>
+    <h2 class="text-center mt10">LISTA DE USUARIOS</h2>
     <mat-divider class="divider"></mat-divider>
     <mat-card-content class="mt5">
         <div class="bootstrap-wrapper">
             <mat-list>
-                <ng-container *ngFor = "let c of categories">
+                <ng-container *ngFor = "let u of users">
                     <div class="list-item-icon mt15">
-                        <mat-icon mat-list-icon class="mr20">category</mat-icon>
+                        <mat-icon mat-list-icon class="mr20">person</mat-icon>
                         <div class="item-details mb15">
-                            <div mat-line>{{ c.tittle }}</div>
-                            <div mat-line>{{ c.description }}</div>
+                            <div mat-line>{{ u.username }}</div>
+                            <div mat-line>{{ u.name | titlecase }}  {{ u.lastName | titlecase }}</div>
                         </div>
                     </div>
                     <mat-divider></mat-divider>

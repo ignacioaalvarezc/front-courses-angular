@@ -28,6 +28,7 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/categories/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
+import { ViewUsersComponent } from './pages/admin/users/view-users/view-users.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AddCategoryComponent } from './pages/admin/categories/add-category/add-
     SidebarComponent,
     WelcomeComponent,
     ViewCategoriesComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    ViewUsersComponent
   ],
   imports: [
     BrowserModule,

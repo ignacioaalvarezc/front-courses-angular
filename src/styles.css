@@ -13,7 +13,12 @@ body {
     text-align: center;
 }
 
+/* WIDTH */
 .full-width {
+    width: 100%;
+}
+
+.wi100 {
     width: 100%;
 }
 
@@ -21,10 +26,12 @@ body {
     width: 80%;
 }
 
+/* MARGIN 5PX */
 .mt5 {
     margin-top: 5px !important;
 }
 
+/* MARGIN 10PX */
 .ml10 {
     margin-left: 10px !important;
 }
@@ -41,6 +48,16 @@ body {
     margin-bottom: 10px !important;
 }
 
+/* MARGIN 15PX */
+.mt15 {
+    margin-top: 15px !important;
+}
+
+.mb15 {
+    margin-bottom: 15px !important;
+}
+
+/* MARGIN 20PX */
 .ml20 {
     margin-left: 20px !important;
 }
@@ -57,6 +74,21 @@ body {
     margin-bottom: 20px !important;
 }
 
+/* MARGIN 30PX */
+.mt30 {
+    margin-top: 30px !important;
+}
+
+.ml30 {
+    margin-left: 30px !important;
+}
+
+/* MARGIN 40PX */
 .mb40{
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
+}
+
+/* MARGIN 70PX */
+.mt70 {
+    margin-top: 70px !important;
 }

@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         });
       }, (error) => {
         console.log(error);
-        this.snack.open('Detalles inválidos, vuelva a intentarlo', 'Aceptar', {
+        this.snack.open('Nombre de usuario o contraseña incorrectos', 'Aceptar', {
           duration: 3000
         })
       }
