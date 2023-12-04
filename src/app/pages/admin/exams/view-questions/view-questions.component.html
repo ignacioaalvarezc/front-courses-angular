@@ -3,36 +3,42 @@
     <mat-divider class="divider"></mat-divider>
     <mat-card-content class="mt30">
         <div class="bootstrap-wrapper container-questions">
-            <mat-card *ngFor = "let q of questions; let i = index" class="mt20">
-                <p class="ml20">
-                    <b>{{ i + 1 }}
-                    <span class="ml20" [innerHTML] = "q.content"></span></b>
-                </p>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>A) {{ q.firstOption }}</p>
+            <mat-card class="mt20 ml30 mr60" *ngFor = "let q of questions; let i = index">
+                <mat-card-header>
+                    <mat-card-title>
+                        <p class="ml20">
+                            <b>{{ i + 1 }}
+                            <span class="ml20" [innerHTML] = "q.content"></span></b>
+                        </p>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>A. {{ q.firstOption }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>B. {{ q.secondOption }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>C. {{ q.thirdOption }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>D. {{ q.fourthOption }}</p>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <p>B) {{ q.secondOption }}</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p>C) {{ q.thirdOption }}</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p>D) {{ q.fourthOption }}</p>
-                        </div>
+                        <mat-divider></mat-divider>
+                        <p class="mt20">
+                            <b>Respuesta correcta: {{ q.answer }}</b>
+                        </p>
                     </div>
-                    <mat-divider></mat-divider>
-                    <p class="mt20">
-                        <b>Respuesta correcta: {{ q.answer }}</b>
-                    </p>
-                </div>
+                </mat-card-content>
             </mat-card>
         </div>
-    <mat-action-list class="container text-center mt20">
+    <div class="container text-center mt10">
       <button [routerLink] = "'/admin/add-question/'+examId+'/'+title" mat-raised-button color="primary">Agregar pregunta</button>
         <button (click) = "goBack()" mat-raised-button class="ml20">Volver</button>
-    </mat-action-list>
+    </div>
     </mat-card-content>
-  </mat-card>
+</mat-card>

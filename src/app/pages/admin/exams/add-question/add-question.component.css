@@ -2,11 +2,16 @@
     height: 677px;
 }
 
+.divider {
+    margin: -12px 15px;
+}
+
 .title {
     margin-right: 820px;
 }
 
 .subtitle-container {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
