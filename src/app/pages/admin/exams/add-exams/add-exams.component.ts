@@ -3,6 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { ExamService } from 'src/app/services/exam.service';
+import { Location } from '@angular/common';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -28,7 +29,8 @@ export class AddExamsComponent implements OnInit {
   constructor(private categoryService:CategoryService,
               private snack:MatSnackBar,
               private examService:ExamService,
-              private router:Router) { }
+              private router:Router,
+              private location:Location) { }
 
   ngOnInit(): void {
     this.categoryService.listCategories().subscribe(
@@ -40,6 +42,10 @@ export class AddExamsComponent implements OnInit {
         Swal.fire('Error', 'Error al cargar las categorías', 'error');
       }
     )
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   saveExam() {
@@ -71,6 +77,7 @@ export class AddExamsComponent implements OnInit {
       }
     )
   }
+
 }
 
 

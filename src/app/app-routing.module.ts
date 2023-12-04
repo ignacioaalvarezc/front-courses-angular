@@ -17,6 +17,7 @@ import { ViewExamsComponent } from './pages/admin/exams/view-exams/view-exams.co
 import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.component';
 import { UpdateExamComponent } from './pages/admin/exams/update-exam/update-exam.component';
 import { ViewQuestionsComponent } from './pages/admin/exams/view-questions/view-questions.component';
+import { AddQuestionComponent } from './pages/admin/exams/add-question/add-question.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,10 @@ const routes: Routes = [
       {
         path: 'view-questions/:examId/:title',
         component: ViewQuestionsComponent
+      },
+      {
+        path: 'add-question/:examId/:title',
+        component: AddQuestionComponent
       }
     ]
   },

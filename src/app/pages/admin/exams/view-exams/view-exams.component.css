@@ -1,10 +1,18 @@
+.card {
+    height: 677px;
+}
+
+.divider {
+    margin: -12px 15px;
+}
+
 .example-header-image {
     background-image: url('../../../../../assets/images/exam.png');
     background-size: cover;
 }
 
 .container-exams {
-    max-height: 610px;
+    max-height: 517px;
     overflow-y: auto;
 }
 
@@ -22,7 +30,7 @@
     width: 110px;
 }
 
-.mr350 {
-    margin-right: 350px !important;
+.mr310 {
+    margin-right: 310px !important;
 }
 

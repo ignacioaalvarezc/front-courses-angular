@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-view-questions',
@@ -14,12 +15,14 @@ export class ViewQuestionsComponent implements OnInit {
   questions: any = [];
 
   constructor(private route:ActivatedRoute,
-              private questionService:QuestionService) { }
+              private router:Router,
+              private questionService:QuestionService,
+              private location:Location) { }
 
   ngOnInit(): void {
     this.examId = this.route.snapshot.params['examId'];
     this.title = this.route.snapshot.params['title'];
-    this.questionService.listQuestionsOfExam(this.examId).subscribe(
+    this.questionService.listExamQuestions(this.examId).subscribe(
       (data:any) => {
         console.log(data);
         this.questions = data;
@@ -28,6 +31,10 @@ export class ViewQuestionsComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

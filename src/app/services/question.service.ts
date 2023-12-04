@@ -9,7 +9,11 @@ export class QuestionService {
 
   constructor(private http:HttpClient) { }
 
-  public listQuestionsOfExam(examId:any) {
-    return this.http.get(`${baserUrl}/questions/exam/${examId}`);
+  public listExamQuestions(examId:any) {
+    return this.http.get(`${baserUrl}/questions/exam/all/${examId}`);
+  }
+
+  public saveQuestion(question:any) {
+    return this.http.post(`${baserUrl}/questions/`, question);
   }
 }

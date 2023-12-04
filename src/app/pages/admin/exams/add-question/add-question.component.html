@@ -1,0 +1,67 @@
+<mat-card class="card">
+    <h2 class="text-center mt10">AÑADIR PREGUNTA AL EXAMÉN {{title.toUpperCase()}}</h2>
+    <mat-divider class="divider"></mat-divider>
+    <mat-card-content class="mt30">
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-subtitle class="subtitle-container">
+                                <h2>Ingrese los detalles de la nueva pregunta</h2>
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <form action="" class="mt20">
+                                <mat-form-field class="full-width">
+                                    <mat-label>Ingrese el contenido de la pregunta</mat-label>
+                                    <textarea rows="3" class="full-width" name="content" [(ngModel)] = "question.content" matInput placeholder="Escribe aquí"></textarea>
+                                </mat-form-field>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Ingrese la opción 1</mat-label>
+                                            <input type="text" name="firstOption" [(ngModel)] = "question.firstOption" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Ingrese la opción 2</mat-label>
+                                            <input type="text" name="secondOption" [(ngModel)] = "question.secondOption" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Ingrese la opción 3</mat-label>
+                                            <input type="text" name="thirdOption" [(ngModel)] = "question.thirdOption" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <mat-form-field class="full-width">
+                                            <mat-label>Ingrese la opción 4</mat-label>
+                                            <input type="text" name="fourthOption" [(ngModel)] = "question.fourthOption" matInput>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <mat-form-field class="full-width">
+                                    <mat-label>Seleccione la respuesta</mat-label>
+                                    <mat-select name="answer" [(ngModel)] = "question.answer">
+                                        <mat-option *ngIf = "question.firstOption" [value] = "question.firstOption">{{ question.firstOption }}</mat-option>
+                                        <mat-option *ngIf = "question.secondOption" [value] = "question.secondOption">{{ question.secondOption }}</mat-option>
+                                        <mat-option *ngIf = "question.thirdOption" [value] = "question.thirdOption">{{ question.thirdOption }}</mat-option>
+                                        <mat-option *ngIf = "question.fourthOption" [value] = "question.fourthOption">{{ question.fourthOption }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <div class="container text-center">
+                                    <button mat-raised-button color="primary">Guardar</button>
+                                    <button type="reset" color="accent" mat-raised-button class="ml20">Limpiar</button>
+                                    <button (click) = "goBack()" class="ml20" mat-raised-button>Volver</button>
+                                </div>
+                            </form>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+  </mat-card>

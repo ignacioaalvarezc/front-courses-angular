@@ -1,0 +1,13 @@
+.card {
+    height: 677px;
+}
+
+.title {
+    margin-right: 820px;
+}
+
+.subtitle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
