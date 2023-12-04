@@ -2,7 +2,7 @@
     <h2 class="text-center mt10">PREGUNTAS DEL EXÁMEN {{ title.toUpperCase() }}</h2>
     <mat-divider class="divider"></mat-divider>
     <mat-card-content class="mt30">
-        <div class="bootstrap-wrapper container-questions">
+        <div class="bootstrap-wrapper container-questions mb20">
             <mat-card class="mt20 ml30 mr60" *ngFor = "let q of questions; let i = index">
                 <mat-card-header>
                     <mat-card-title>
@@ -34,11 +34,16 @@
                         </p>
                     </div>
                 </mat-card-content>
+                <mat-card-actions class="container-update-delete-buttons">
+                    <button mat-button color="primary">Actualizar</button>
+                    <button mat-button (click) = "deleteQuestion(q.questionId)" color="warn" class="ml20">Eliminar</button>
+                </mat-card-actions>
             </mat-card>
         </div>
     <div class="container text-center mt10">
-      <button [routerLink] = "'/admin/add-question/'+examId+'/'+title" mat-raised-button color="primary">Agregar pregunta</button>
+        <button [routerLink] = "'/admin/add-question/'+examId+'/'+title" mat-raised-button color="primary">Agregar pregunta</button>
         <button (click) = "goBack()" mat-raised-button class="ml20">Volver</button>
     </div>
     </mat-card-content>
+    
 </mat-card>

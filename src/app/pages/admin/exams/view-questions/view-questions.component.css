@@ -6,6 +6,10 @@
     margin: -12px 15px;
 }
 
+.container-update-delete-buttons {
+    justify-content: center;
+}
+
 .container-questions {
     max-height: 530px;
     overflow-y: auto;

@@ -17,8 +17,8 @@
                     <button mat-stroked-button color="primary" class="ml20 false-button">Estado: {{ e.enabled }}</button>
                     <button mat-flat-button color="primary" class="ml20 mr310">Intentos</button>
                     <div class="buttons-update-delete">
-                        <button [routerLink] = "'/admin/exam/' +e.examId" mat-flat-button color="primary" class="mb20">Actualizar</button>
-                        <button mat-flat-button color="warn" (click) = "deleteExam(e.examId)">Eliminar</button>
+                        <button [routerLink] = "'/admin/exam/' +e.examId" mat-button color="primary" class="mb20">Actualizar</button>
+                        <button mat-button color="warn" (click) = "deleteExam(e.examId)">Eliminar</button>
                     </div> 
                 </mat-card-actions>
             </mat-card-content>
