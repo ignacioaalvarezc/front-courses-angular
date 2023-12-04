@@ -15,6 +15,8 @@ import { ViewUsersComponent } from './pages/admin/users/view-users/view-users.co
 import { AddUsersComponent } from './pages/admin/users/view-users/add-users/add-users.component';
 import { ViewExamsComponent } from './pages/admin/exams/view-exams/view-exams.component';
 import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.component';
+import { UpdateExamComponent } from './pages/admin/exams/update-exam/update-exam.component';
+import { ViewQuestionsComponent } from './pages/admin/exams/view-questions/view-questions.component';
 
 const routes: Routes = [
   {
@@ -68,6 +70,14 @@ const routes: Routes = [
       {
         path: 'add-exams',
         component: AddExamsComponent
+      },
+      {
+        path: 'exam/:examId',
+        component:UpdateExamComponent
+      },
+      {
+        path: 'view-questions/:examId/:title',
+        component: ViewQuestionsComponent
       }
     ]
   },

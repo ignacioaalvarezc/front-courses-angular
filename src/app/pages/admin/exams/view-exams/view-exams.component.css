@@ -7,3 +7,22 @@
     max-height: 610px;
     overflow-y: auto;
 }
+
+.false-button {
+    pointer-events: none;
+}
+
+.buttons-update-delete {
+    display: flex;
+    flex-direction: column;
+    margin-top: -55px;
+}
+
+.buttons-update-delete button {
+    width: 110px;
+}
+
+.mr350 {
+    margin-right: 350px !important;
+}
+

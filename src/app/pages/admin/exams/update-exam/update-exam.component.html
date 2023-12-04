@@ -1,13 +1,13 @@
 <mat-card class="card">
-    <h2 class="text-center mt10 mb4">AGREGAR NUEVO EXÁMEN</h2>
+    <h2 class="text-center mt10 mb4">ACTUALIZAR EXÁMEN</h2>
     <mat-divider class="divider"></mat-divider>
     <div class="row mt40">
         <div class="col md-8 offset-md-2">
-            <form (ngSubmit) = "saveExam()">
+            <form *ngIf = "exam" (submit) = "updateExam()">
                 <mat-form-field class="wi80" appearance="fill">
                     <mat-label>Título</mat-label>
                     <input 
-                    [(ngModel)]= "examData.title"
+                    [(ngModel)]= "exam.title"
                     type="text"
                     name="title"
                     required
@@ -17,7 +17,7 @@
                 <mat-form-field class="wi80" appearance="fill">
                     <mat-label>Descripción</mat-label>
                     <textarea 
-                    [(ngModel)]= "examData.description"
+                    [(ngModel)]= "exam.description"
                     type="text"
                     name="description"
                     placeholder="Ingrese la descripción"
@@ -29,7 +29,7 @@
                         <mat-form-field class="wi80" appearance="fill">
                             <mat-label>Puntaje máximos</mat-label>
                             <input 
-                            [(ngModel)]= "examData.maxScore"
+                            [(ngModel)]= "exam.maxScore"
                             type="text"
                             name="puntajeMaximo"
                             placeholder="Ingrese la cantidad de puntos máximos"
@@ -40,7 +40,7 @@
                         <mat-form-field class="wi80" appearance="fill">
                             <mat-label>Número de preguntas</mat-label>
                             <input 
-                            [(ngModel)]= "examData.questionsAmount"
+                            [(ngModel)]= "exam.questionsAmount"
                             type="text"
                             name="numeroDePreguntas"
                             placeholder="Ingrese la cantidad de preguntas"
@@ -48,19 +48,19 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <mat-slide-toggle class="ml20" name="enabled" [(ngModel)]= "examData.enabled" color="primary">
+                <mat-slide-toggle class="ml20" name="enabled" [(ngModel)]= "exam.enabled" color="primary">
                     Estado de publicación
                 </mat-slide-toggle>
                 <mat-form-field appearance="fill" class="mt10 ml258 wi39">
                     <mat-label>Categoría</mat-label>
-                    <mat-select name="category" [(ngModel)]= "examData.category.categoryId">
+                    <mat-select name="category" [(ngModel)]= "exam.category.categoryId">
                         <mat-option *ngFor= "let c of categories" [value]="c.categoryId">
                             {{ c.title }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
                 <div class="container mt40 text-center">
-                    <button mat-raised-button color="primary">Guardar exámen</button>
+                    <button mat-raised-button color="primary">Actualizar exámen</button>
                 </div>
             </form>
         </div>
