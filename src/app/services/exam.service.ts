@@ -13,5 +13,8 @@ export class ExamService {
     return this.http.get(`${baserUrl}/exams/`);
   }
 
+  public saveExam(exam:any) {
+    return this.http.post(`${baserUrl}/exams/`, exam);
+  }
   
 }
