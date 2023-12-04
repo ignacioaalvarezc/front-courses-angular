@@ -1,1 +1,37 @@
-<p>view-questions works!</p>
+<mat-card class="card">
+    <h2 class="text-center mt10">PREGUNTAS DEL EXÁMEN {{ title.toUpperCase() }}</h2>
+    <mat-divider class="divider"></mat-divider>
+    <mat-card-content class="mt30">
+        <div class="bootstrap-wrapper">
+            <mat-card *ngFor = "let q of questions; let i = index" class="mt20">
+                <p class="ml20">
+                    <b>{{ i + 1 }}
+                    <span class="ml20" [innerHTML] = "q.content"></span></b>
+                </p>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>A) {{ q.firstOption }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>B) {{ q.secondOption }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>C) {{ q.thirdOption }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>D) {{ q.fourthOption }}</p>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <p class="mt20">
+                        <b>Respuesta correcta: {{ q.answer }}</b>
+                    </p>
+                </div>
+            </mat-card>
+        </div>
+    <mat-action-list class="container text-center mt20">
+      <button routerLink="/admin/add-category" mat-raised-button color="primary">Agregar categoría</button>
+    </mat-action-list>
+    </mat-card-content>
+  </mat-card>
