@@ -3,13 +3,13 @@
     <mat-divider class="divider"></mat-divider>
     <div class="row mt40">
         <div class="col md-8 offset-md-2">
-            <form (ngSubmit) = 'saveExam()'>
+            <form (ngSubmit) = "saveExam()">
                 <mat-form-field class="wi80" appearance="fill">
                     <mat-label>Título</mat-label>
                     <input 
                     [(ngModel)]= "examData.title"
                     type="text"
-                    name="tittle"
+                    name="title"
                     placeholder="Ingrese el título del exámen"
                     matInput>
                 </mat-form-field>
@@ -54,14 +54,14 @@
                     <mat-label>Categoría</mat-label>
                     <mat-select name="category" [(ngModel)]= "examData.category.categoryId">
                         <mat-option *ngFor= "let c of categories" [value]="c.categoryId">
-                            {{ c.tittle }}
+                            {{ c.title }}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
+                <div class="container mt40 text-center">
+                    <button mat-raised-button color="primary">Guardar exámen</button>
+                </div>
             </form>
         </div>
-    </div>
-    <div class="container mt40 text-center">
-        <button mat-raised-button color="primary">Guardar exámen</button>
     </div>
 </mat-card>

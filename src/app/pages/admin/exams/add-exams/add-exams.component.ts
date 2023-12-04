@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { ExamService } from 'src/app/services/exam.service';
 import Swal from 'sweetalert2';
@@ -26,7 +27,8 @@ export class AddExamsComponent implements OnInit {
 
   constructor(private categoryService:CategoryService,
               private snack:MatSnackBar,
-              private examService:ExamService) { }
+              private examService:ExamService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.categoryService.listCategories().subscribe(
@@ -43,7 +45,7 @@ export class AddExamsComponent implements OnInit {
   saveExam() {
     console.log(this.examData);
     if(this.examData.title.trim() == '' || this.examData.title == null) {
-      this.snack.open('El título es requerido', '', {
+      this.snack.open('El título es requerido', 'Aceptar', {
         duration: 3000
       });
       return;
@@ -62,6 +64,7 @@ export class AddExamsComponent implements OnInit {
             categoryId: ''
           }
         }
+        this.router.navigate(['/admin/view-exams']);
       },
       (error) => {
         Swal.fire('Error', 'Error al guardar el exámen', 'error');

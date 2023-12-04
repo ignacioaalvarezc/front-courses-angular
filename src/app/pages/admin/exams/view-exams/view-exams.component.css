@@ -2,3 +2,8 @@
     background-image: url('../../../../../assets/images/exam.png');
     background-size: cover;
 }
+
+.container-exams {
+    max-height: 610px;
+    overflow-y: auto;
+}
