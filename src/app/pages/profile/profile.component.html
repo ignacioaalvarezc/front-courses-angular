@@ -10,7 +10,7 @@
                      <h1 class="mt10">{{ user.name | titlecase }} {{ user.lastName | titlecase }}</h1>
                 </div>
                 <div class="row">
-                    <div class="col-md-10 offset-md-1 mt10">
+                    <div class="col-md-10 offset-md-1">
                         <table class="table text-center">
                             <tr>
                                 <td>Nombre de usuario</td>
@@ -44,6 +44,7 @@
         <mat-card-actions class="buttons-profile mt20">
             <button mat-raised-button color="primary" class="mr20">Actualizar</button>
             <button mat-raised-button color="accent">Compartir</button>
+            <button routerLink="/admin" mat-raised-button class="ml20">Volver</button>
         </mat-card-actions>
     </mat-card-content>
 </mat-card>

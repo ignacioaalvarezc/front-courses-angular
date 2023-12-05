@@ -27,5 +27,4 @@ export class ViewCategoriesComponent implements OnInit {
       }
     )
   }
-
 }

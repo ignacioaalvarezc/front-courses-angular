@@ -5,16 +5,16 @@
         <div class="bootstrap-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <form (ngSubmit)= "formSubmit()">
+                    <form #categoryForm="ngForm" (ngSubmit)= "categoryForm.form.valid && onFormSubmit()">
                         <mat-form-field class="wi100" appearance="outline">
                             <mat-label>Título</mat-label>
                             <input autofocus
                             required
                             type="text"
-                            name="tittle"
+                            name="title"
                             matInput
                             placeholder="Ingrese el título de la categoría"
-                            [(ngModel)]= "category.tittle">
+                            [(ngModel)]= "category.title">
                         </mat-form-field>
                         <mat-form-field class="wi100" appearance="outline">
                             <mat-label>Descripción</mat-label>
@@ -26,7 +26,9 @@
                             </textarea>
                         </mat-form-field>
                         <div class="container text-center mt15">
-                            <button mat-raised-button color="primary">Guardar</button>
+                            <button mat-raised-button color="primary" [disabled]="!categoryForm.form.valid">Guardar</button>
+                            <button type="reset" mat-raised-button class="ml20" color="accent">Limpiar</button>
+                            <button type="reset" (click) = "goBack()" mat-raised-button class="ml20">Volver</button>
                         </div>
                     </form>
                 </div>

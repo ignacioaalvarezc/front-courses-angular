@@ -18,6 +18,10 @@ export class QuestionService {
   }
 
   public deleteQuestion(questionId:any) {
-    return this.http.delete(`${baserUrl}/question/${questionId}`);
+    return this.http.delete(`${baserUrl}/questions/${questionId}`);
+  }
+
+  public updateQuestion(question:any) {
+    return this.http.put(`${baserUrl}/questions/`, question);
   }
 }
