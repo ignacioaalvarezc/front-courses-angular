@@ -18,6 +18,7 @@ import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.compo
 import { UpdateExamComponent } from './pages/admin/exams/update-exam/update-exam.component';
 import { ViewQuestionsComponent } from './pages/admin/exams/view-questions/view-questions.component';
 import { AddQuestionComponent } from './pages/admin/exams/add-question/add-question.component';
+import { UpdateQuestionComponent } from './pages/admin/exams/update-question/update-question.component';
 
 const routes: Routes = [
   {
@@ -83,6 +84,10 @@ const routes: Routes = [
       {
         path: 'add-question/:examId/:title',
         component: AddQuestionComponent
+      },
+      {
+        path:'question/:questionId',
+        component:UpdateQuestionComponent
       }
     ]
   },

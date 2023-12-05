@@ -35,7 +35,7 @@
                     </div>
                 </mat-card-content>
                 <mat-card-actions class="container-update-delete-buttons">
-                    <button mat-button color="primary">Actualizar</button>
+                    <button mat-button [routerLink] = "'/admin/question/'+q.questionId" color="primary">Actualizar</button>
                     <button mat-button (click) = "deleteQuestion(q.questionId)" color="warn" class="ml20">Eliminar</button>
                 </mat-card-actions>
             </mat-card>
