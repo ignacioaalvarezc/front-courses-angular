@@ -12,7 +12,7 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/categories/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
 import { ViewUsersComponent } from './pages/admin/users/view-users/view-users.component';
-import { AddUsersComponent } from './pages/admin/users/view-users/add-users/add-users.component';
+import { AddUsersComponent } from './pages/admin/users/add-users/add-users.component';
 import { ViewExamsComponent } from './pages/admin/exams/view-exams/view-exams.component';
 import { AddExamsComponent } from './pages/admin/exams/add-exams/add-exams.component';
 import { UpdateExamComponent } from './pages/admin/exams/update-exam/update-exam.component';
