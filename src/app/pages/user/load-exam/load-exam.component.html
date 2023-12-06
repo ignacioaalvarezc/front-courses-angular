@@ -1,0 +1,36 @@
+<mat-card class="big-card mt20">
+    <h2 class="text-center mt10">EXÁMENES DISPONIBLES</h2>
+    <mat-divider class="big-divider"></mat-divider>
+    <mat-card-content class="mt30">
+        <div class="container-exams">
+            <div class="row mt20 ml10" *ngIf = "exams">
+                <div class="col-md-4" *ngFor = "let e of exams; let i = index">
+                    <mat-card class="card mb20" style="margin-left: -10px;">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image">
+                            </div>
+                            <mat-card-title>
+                                {{ e.title }}
+                            </mat-card-title>
+                            <mat-card-subtitle>
+                                {{ e.category.title }}
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content class="exam-description">
+                            <p class="description" [ngClass]="{'expanded': expanded[i]}" #descriptionElement>
+                                {{ e.description }}
+                            </p>
+                            <span *ngIf="!expanded[i] && isDescriptionLong(e.description)"><a class="read-more toggle" (click)="toggleExpansion(i)">Leer más</a></span>
+                            <span *ngIf="expanded[i]"><a class="read-more expanded" (click)="toggleExpansion(i)">Leer menos</a></span>
+                        </mat-card-content>
+                        <mat-divider class="divider"></mat-divider>
+                        <mat-card-actions class="exam-buttons">
+                            <button mat-button color="primary">Ver</button>
+                            <button mat-button color="accent">Empezar</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>         
+        </div>
+    </mat-card-content>
+</mat-card>

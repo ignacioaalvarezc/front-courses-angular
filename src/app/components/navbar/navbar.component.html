@@ -1,36 +1,71 @@
-<mat-toolbar color = "primary">
-    <a 
-    [routerLink] = "'/'"
-    mat-icon-button class="example-icon" 
-    arial-label="Example icon-button with menu icon">
-        <mat-icon>library_books</mat-icon>
-        
+<!-- ANGULAR MATERIAL DESIGN TOOLBAR -->
+<mat-toolbar class="navbar" color = "primary" fxLayout="row" fxLayoutAlign="start center">
+    <!-- ICON AND LINK TO THE HOME PAGE -->
+    <a [routerLink] = "'/'" mat-icon-button class="example-icon" arial-label="Example icon-button with menu icon">
+        <mat-icon class="navbar-icon">library_books</mat-icon>
     </a>
-    <span class="mt5 fs10">Portal de exámenes</span>
+    <!-- TOOLBAR TITLE -->
+    <span class="navbar-header">Portal de exámenes</span>
+    <!-- FLEXIBLE SPACER FOR RIGHT ALIGNMENT -->
     <span class="example-spacer"></span>
-
-    <button
-        *ngIf="!login.isLoggedIn() && !isLoginPage()"
-        [routerLink] = "'/login'" 
-        mat-button class = "example-icon favorite-icon mt5"
-        arial-label="Example icon-button with menu icon">
-       <span class="fs10">Iniciar sesión</span> 
-    </button>
-    <button
-        *ngIf="login.isLoggedIn() && user"
-        mat-button
-        style = "margin-right: 30px;"
-        class = "example-icon favorite-icon mt5"
-        arial-label="Example icon-button with menu icon"
-        routerLink="/admin/profile">
-        <span class="fs10">{{ user.username | titlecase }}</span>
-    </button>
-    <button
-        *ngIf="login.isLoggedIn()"
-        (click) = "logout()"
-        mat-button class = "example-icon favorite-icon mt5"
-        arial-label="Example icon-button with menu icon">
-        <span class="fs10">Cerrar sesión</span> 
-    </button>
-
+    <!-- BUTTON SECTION FOR MEDIUM AND BIG SCREENS -->
+    <div fxHide.lt-md>
+        <!-- LOGIN BUTTON -->
+        <button
+            *ngIf="!login.isLoggedIn() && !isLoginPage()"
+            [routerLink] = "'/login'" 
+            mat-button class = "example-icon favorite-icon mt5"
+            arial-label="Example icon-button with menu icon">
+            <span class="login-font">Iniciar sesión</span> 
+        </button>
+        <!-- USER PROFILE BUTTON -->
+        <button
+            *ngIf="login.isLoggedIn() && user"
+            mat-button
+            style = "margin-right: 30px;"
+            class = "example-icon favorite-icon mt5"
+            arial-label="Example icon-button with menu icon"
+            routerLink="/admin/profile">
+            <span class="login-font">{{ user.username | titlecase }}</span>
+        </button>
+        <!-- LOGOUT BUTTON -->
+        <button
+            *ngIf="login.isLoggedIn()"
+            (click) = "logout()"
+            mat-button class = "example-icon favorite-icon mt5"
+            arial-label="Example icon-button with menu icon">
+            <span class="login-font">Cerrar sesión</span> 
+        </button>
+    </div>
+    <!-- MENU SECTION FOR SMALL SCREENS -->
+    <div fxHide.gt-sm>
+        <!-- MENU BUTTON WITH VERTICAL ELLIPSIS ICON -->
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <!-- DROPDOWN MENU -->
+        <mat-menu #menu="matMenu">
+            <!-- MENU ITEM LOG IN -->
+            <button
+                *ngIf="!login.isLoggedIn() && !isLoginPage()"
+                [routerLink]="'/login'"
+                mat-menu-item>
+                <span class="login-font">Iniciar sesión</span>
+            </button>
+            <!-- MENU ITEM USER PROFILE -->
+            <button
+                *ngIf="login.isLoggedIn() && user"
+                mat-menu-item
+                routerLink="/admin/profile">
+                <span class="login-font">{{ user.username | titlecase }}</span>
+            </button>
+            <!-- MENU -->
+            <button
+                *ngIf="login.isLoggedIn()"
+                (click)="logout()"
+                mat-menu-item>
+                <span class="login-font">Cerrar sesión</span>
+            </button>
+        </mat-menu>
+    </div>
 </mat-toolbar>

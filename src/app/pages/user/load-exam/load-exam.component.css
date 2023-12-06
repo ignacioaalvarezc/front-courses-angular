@@ -1,0 +1,79 @@
+.big-card {
+    height: 650px;
+}
+
+.big-divider {
+    margin: -12px 15px;
+}
+
+.card {
+    /*height: 160px;*/
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 95%;
+    position: relative;
+    transition: max-height 0.3s ease-out;
+}
+
+.example-header-image {
+    background-image: url('../../../../assets/images/exam.png');
+    background-size: cover;
+}
+
+.exam-description {
+    /*max-height: 40px;*/
+    font-size: 12px;
+    opacity: 0.8;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.description {
+    /*max-height: 40px;*/
+    overflow: hidden;
+    /*text-overflow: ellipsis;*/
+    position: relative;
+    margin-bottom: 0px;
+}
+
+
+.description.expanded {
+    /*max-height: none;*/
+    overflow: visible;
+}
+
+.description:not(.expanded) {
+    max-height: 40px;
+    overflow: hidden;
+}
+/*
+.expanded {
+    max-height: none;
+}
+*/
+
+
+.read-more {
+    color: blue;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    background: white;
+    margin-right: 14px;
+    margin-top: 0px;
+  }
+
+  .toggle {
+    margin-right: 25px;
+  }
+
+.divider {
+    margin: 10px;
+}
+
+.exam-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: -18px;
+    margin-bottom: -5px;
+}

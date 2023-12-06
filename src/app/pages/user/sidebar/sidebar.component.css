@@ -1,0 +1,22 @@
+.card {
+    margin-top: 20px;
+    height: 650px;
+}
+
+.menu-header {
+    margin-left: 25px !important;
+}
+
+.section-icon {
+    vertical-align: middle;
+}
+
+.section-header {
+    margin-left: 12px;
+}
+
+
+
+.divider {
+    margin: -9px 15px;
+}

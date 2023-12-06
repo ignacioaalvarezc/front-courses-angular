@@ -17,6 +17,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -39,7 +41,7 @@ import { ViewQuestionsComponent } from './pages/admin/exams/view-questions/view-
 import { AddQuestionComponent } from './pages/admin/exams/add-question/add-question.component';
 import { UpdateQuestionComponent } from './pages/admin/exams/update-question/update-question.component';
 import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
-
+import { LoadExamComponent } from './pages/user/load-exam/load-exam.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,8 @@ import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.co
     ViewQuestionsComponent,
     AddQuestionComponent,
     UpdateQuestionComponent,
-    UserSidebar
+    UserSidebar,
+    LoadExamComponent
   ],
   imports: [
     BrowserModule,
@@ -74,13 +77,15 @@ import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.co
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    MatMenuModule,
     MatSelectModule,
     MatSlideToggleModule,
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

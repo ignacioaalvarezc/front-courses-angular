@@ -1,7 +1,7 @@
 <mat-card class="card">
     <h2 class="text-center mt10">AGREGAR UNA NUEVA CATEGORÍA</h2>
     <mat-divider class="divider"></mat-divider>
-    <mat-card-content class="mt70">
+    <mat-card-content class="mt40">
         <div class="bootstrap-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
@@ -25,7 +25,7 @@
                             [(ngModel)]= "category.description">
                             </textarea>
                         </mat-form-field>
-                        <div class="container text-center mt15">
+                        <div class="container text-center">
                             <button mat-raised-button color="primary" [disabled]="!categoryForm.form.valid">Guardar</button>
                             <button type="reset" mat-raised-button class="ml20" color="accent">Limpiar</button>
                             <button type="reset" (click) = "goBack()" mat-raised-button class="ml20">Volver</button>

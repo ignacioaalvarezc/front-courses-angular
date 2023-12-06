@@ -19,6 +19,7 @@ import { UpdateExamComponent } from './pages/admin/exams/update-exam/update-exam
 import { ViewQuestionsComponent } from './pages/admin/exams/view-questions/view-questions.component';
 import { AddQuestionComponent } from './pages/admin/exams/add-question/add-question.component';
 import { UpdateQuestionComponent } from './pages/admin/exams/update-question/update-question.component';
+import { LoadExamComponent } from './pages/user/load-exam/load-exam.component';
 
 const routes: Routes = [
   {
@@ -94,8 +95,13 @@ const routes: Routes = [
   {
     path: 'user-dashboard',
     component: UserDashboardComponent,
-    pathMatch: 'full',
-    canActivate: [UserGuard]
+    canActivate: [UserGuard],
+    children : [
+      {
+        path: ':catId',
+        component:LoadExamComponent
+      }
+    ]
   }
 ];
 
