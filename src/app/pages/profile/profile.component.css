@@ -1,14 +1,11 @@
-.card {
-    height: 677px;
-}
 
 .divider {
     margin: 0px 15px;
 }
 
 .profile-image {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 120px;
+    max-height: 120px;
     border: 2px solid gainsboro;
     border-radius: 50%;
 }
@@ -37,8 +34,4 @@ table tr td:nth-child(2) {
 
 .mb4{
     margin-bottom: 4px;
-}
-
-.mt12{
-    margin-top: 12px;
 }

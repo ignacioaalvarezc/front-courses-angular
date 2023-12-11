@@ -1,13 +1,14 @@
-.big-card {
-    height: 650px;
-}
-
 .big-divider {
     margin: -12px 15px;
 }
 
+.container-exams {
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .card {
-    /*height: 160px;*/
     margin-bottom: 10px;
     overflow: hidden;
     width: 95%;

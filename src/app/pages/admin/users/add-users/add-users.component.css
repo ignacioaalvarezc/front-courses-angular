@@ -1,11 +1,15 @@
-.card {
-    height: 677px;
-}
-
 .full-width {
     margin-top: 12px;
 }
 
 .divider {
     margin: -12px 15px;
+}
+
+.input {
+    height: 10%;
+}
+
+.buttons {
+    margin-top: -10px;
 }

@@ -1,15 +1,25 @@
-<mat-card class="card">
+<mat-card class="card mt20 h650">
     <h2 class="text-center mt10">LISTA DE USUARIOS</h2>
     <mat-divider class="divider"></mat-divider>
     <mat-card-content class="mt5">
-        <div class="bootstrap-wrapper">
+        <div class="bootstrap-wrapper container-users">
             <mat-list>
                 <ng-container *ngFor = "let u of users">
-                    <div class="list-item-icon mt15">
+                    <div class="list-item-icon mt10">
                         <mat-icon mat-list-icon class="mr20">person</mat-icon>
-                        <div class="item-details mb15">
-                            <div mat-line>{{ u.username }}</div>
-                            <div mat-line>{{ u.name | titlecase }}  {{ u.lastName | titlecase }}</div>
+                        <div class="item-details mb10">
+                            <div mat-line class="info">Id: {{ u.userId }}</div>
+                            <div mat-line>Username: {{ u.username }}</div>
+                            <div mat-line>Nombre: {{ u.name | titlecase }}  {{ u.lastName | titlecase }}</div>
+                            <div class="right-items">
+                                <div mat-line>Rol: {{ u.authorities[0].authority }}</div>
+                                <button mat-icon-button class="edit-button" color="primary" matTooltip="Editar">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button mat-icon-button color="warn" matTooltip="Deshabilitar">
+                                    <mat-icon>block</mat-icon>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <mat-divider></mat-divider>

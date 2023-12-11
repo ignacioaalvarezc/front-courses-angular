@@ -1,4 +1,4 @@
-<mat-card class="big-card mt20">
+<mat-card class="mt20 h650">
     <h2 class="text-center mt10">EXÁMENES DISPONIBLES</h2>
     <mat-divider class="big-divider"></mat-divider>
     <mat-card-content class="mt30">
@@ -28,6 +28,13 @@
                             <button mat-button color="primary">Ver</button>
                             <button mat-button color="accent">Empezar</button>
                         </mat-card-actions>
+                    </mat-card>
+                </div>
+                <div class="col-md-12" *ngIf = "exams.length == 0">
+                    <mat-card>
+                        <mat-card-content>
+                            <h1>No hay exámenes en esta categoría</h1>
+                        </mat-card-content>
                     </mat-card>
                 </div>
             </div>         

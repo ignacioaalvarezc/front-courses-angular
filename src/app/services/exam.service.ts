@@ -28,4 +28,8 @@ export class ExamService {
   public updateExam(exam:any) {
     return this.http.put(`${baserUrl}/exams/`, exam);
   }
+
+  public listExamsOfACategory(categoryId:any){
+    return this.http.get(`${baserUrl}/exams/category/${categoryId}`);
+  }
 }

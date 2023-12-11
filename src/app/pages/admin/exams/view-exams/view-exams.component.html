@@ -1,4 +1,4 @@
-<mat-card class="card">
+<mat-card class="card mt20 h650">
     <h2 class="text-center mt10">EXÁMENES</h2>
     <mat-divider class="divider"></mat-divider>
     <mat-card-content class="mt30">
@@ -12,10 +12,10 @@
             <mat-card-content>
                 <mat-card-actions>
                     <button mat-flat-button color="primary" [routerLink] = "'/admin/view-questions/'+e.examId+'/'+e.title">Questionario</button>
-                    <button mat-stroked-button color="primary" class="ml20 false-button">Puntos máximos: {{ e.maxScore }}</button>
-                    <button mat-stroked-button color="primary" class="ml20 false-button">Preguntas: {{ e.questionsAmount }}</button>
-                    <button mat-stroked-button color="primary" class="ml20 false-button">Estado: {{ e.enabled }}</button>
-                    <button mat-flat-button color="primary" class="ml20 mr310">Intentos</button>
+                    <button mat-stroked-button class="ml20 false-button">Puntos máximos: {{ e.maxScore }}</button>
+                    <button mat-stroked-button class="ml20 false-button">Preguntas: {{ e.questionsAmount }}</button>
+                    <button mat-stroked-button class="ml20 false-button">Estado: {{ e.enabled }}</button>
+                    <button mat-flat-button color="primary" class="ml20">Intentos</button>
                     <div class="buttons-update-delete">
                         <button [routerLink] = "'/admin/exam/' +e.examId" mat-button color="primary" class="mb20">Actualizar</button>
                         <button mat-button color="warn" (click) = "deleteExam(e.examId)">Eliminar</button>
@@ -25,7 +25,7 @@
         </mat-card>
     </div>
 
-    <div class="container text-center mt30">
+    <div class="container text-center mt20">
         <button mat-raised-button color="primary" routerLink="/admin/add-exams">Agregar exámen</button>
         <button mat-raised-button class="ml20" routerLink="/admin">Volver</button>
     </div>

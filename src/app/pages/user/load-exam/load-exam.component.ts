@@ -18,22 +18,34 @@ export class LoadExamComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.catId = this.route.snapshot.params['catId'];
-    if(this.catId == 0) {
-      console.log("Cargando todos los exámenes");
-      this.examService.listExams().subscribe(
-        (data) => {
-          this.exams = data;
-          this.expanded = new Array(this.exams.length).fill(false);
-          console.log(this.exams);
-        },
-        (error) => {
-          console.log(error);
-        }
-      )
-    } else {
-      console.log("Cargando un exámen en específico");
-    }
+    this.route.params.subscribe((params) => {
+      this.catId = params['catId'];
+      if(this.catId == 0) {
+        console.log("Cargando todos los exámenes");
+        this.examService.listExams().subscribe(
+          (data) => {
+            this.exams = data;
+            this.expanded = new Array(this.exams.length).fill(false);
+            console.log(this.exams);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+      } else {
+        console.log("Cargando un exámen en específico");
+        this.examService.listExamsOfACategory(this.catId).subscribe(
+          (data:any) => {
+            this.exams = data;
+            console.log(this.exams);
+          },
+          (error) => {
+            console.log(error);
+          }
+        )
+  
+      }
+    }); 
   }
 
   toggleExpansion(index: number): void {

@@ -6,9 +6,25 @@
     margin: -12px 15px;
 }
 
+.container-users {
+    max-height: 517px;
+    overflow-y: auto;
+}
+
 .list-item-icon {
     display: flex;
     align-items: center;
     width: 100%;
 }
+
+.right-items {
+    margin-left: 1000px;
+    margin-top: -65px;
+}
+
+.edit-button{
+   margin-left: -12px;
+}
+
+
 

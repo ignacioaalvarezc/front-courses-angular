@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-users',
@@ -20,7 +21,8 @@ export class AddUsersComponent implements OnInit {
   }
 
   constructor(private userService:UserService,
-              private snack:MatSnackBar) { }
+              private snack:MatSnackBar,
+              private location:Location) { }
 
   ngOnInit(): void {
 
@@ -60,5 +62,10 @@ export class AddUsersComponent implements OnInit {
       }
     )
   }
+
+  goBack(): void {
+    this.location.back();
+  }  
+
 
 }
