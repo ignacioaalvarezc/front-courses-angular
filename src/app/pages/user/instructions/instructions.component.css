@@ -10,17 +10,19 @@
     margin-top: -8px;
 }
 
+.container-instructions {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
 .ul {
     margin-top: -10px;
 }
 
-.buttons {
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .final-divider {
     margin: 0px 15px;
+}
+
+.buttons {
+    justify-content: center;
 }

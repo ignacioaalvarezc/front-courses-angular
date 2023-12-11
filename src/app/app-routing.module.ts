@@ -21,6 +21,7 @@ import { AddQuestionComponent } from './pages/admin/exams/add-question/add-quest
 import { UpdateQuestionComponent } from './pages/admin/exams/update-question/update-question.component';
 import { LoadExamComponent } from './pages/user/load-exam/load-exam.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 
 const routes: Routes = [
   {
@@ -107,6 +108,11 @@ const routes: Routes = [
         component:InstructionsComponent
       }
     ]
+  },
+  {
+    path: "start/:examId",
+    component: StartExamComponent,
+    canActivate:[UserGuard]
   }
 ];
 

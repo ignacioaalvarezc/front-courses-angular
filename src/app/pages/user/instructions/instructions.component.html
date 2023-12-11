@@ -2,7 +2,7 @@
         <h2 class="exam-title text-center mt10">{{ exam.title }}</h2>
     <mat-divider class="divider"></mat-divider>
         <mat-card-subtitle class="ml60 mt20"><p>{{ exam.description }}</p></mat-card-subtitle>
-    <div class="bootstrap-wrapper">
+    <div class="bootstrap-wrapper container-instructions">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -24,7 +24,7 @@
                     <mat-divider></mat-divider>
                     <h2>Instrucciones del exámen:</h2>
                     <ul class="ul">
-                        <li>Presione el botón <b>Empezar</b> para iniciar el exámen.</li>
+                        <li>Presione el botón <b>Comenzar exámen</b> para iniciar el exámen.</li>
                         <li>El tiempo comenzará en el momento en que haga click en el botón de inicio.</li>
                         <li>No puede reanudar este cuestionario si se interrumpe por algún motivo.</li>
                         <li>Desplácese hacia abajo para pasar a la siguiente pregunta.</li>
@@ -36,8 +36,13 @@
             </div>
         </div>
     </div>
-    <button [routerLink]="'/start/'+examId" class="buttons mt10" mat-raised-button color="primary">
-        Comenzar exámen
-    </button>
     <mat-divider class="mt20 final-divider"></mat-divider>
+    <mat-card-actions class="text-center buttons mt20">
+        <button (click)="startExam()" mat-button color="primary">
+            Comenzar exámen
+        </button>
+        <button type="reset" (click) = "goBack()" mat-button color="warn" class="ml20">
+            Volver
+        </button>
+    </mat-card-actions>
 </mat-card>
