@@ -20,6 +20,7 @@ import { ViewQuestionsComponent } from './pages/admin/exams/view-questions/view-
 import { AddQuestionComponent } from './pages/admin/exams/add-question/add-question.component';
 import { UpdateQuestionComponent } from './pages/admin/exams/update-question/update-question.component';
 import { LoadExamComponent } from './pages/user/load-exam/load-exam.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 
 const routes: Routes = [
   {
@@ -100,6 +101,10 @@ const routes: Routes = [
       {
         path: ':catId',
         component:LoadExamComponent
+      },
+      {
+        path:'instructions/:examId',
+        component:InstructionsComponent
       }
     ]
   }

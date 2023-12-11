@@ -1,0 +1,43 @@
+<mat-card class="mt20 h650">
+        <h2 class="exam-title text-center mt10">{{ exam.title }}</h2>
+    <mat-divider class="divider"></mat-divider>
+        <mat-card-subtitle class="ml60 mt20"><p>{{ exam.description }}</p></mat-card-subtitle>
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-card-content class="ml30 mb10 card-content">
+                        Lea las instrucciones cuidadosamente antes de comenzar en exámen.
+                    <h2>Detalles del exámen: </h2>
+                    <ul class="ul">
+                        <li>Este exámen es solo para fines prácticos.</li>
+                        <li>Tienes que enviar el cuestionario dentro del tiempo establecido.</li>
+                        <li>Este exámen contiene <b>{{ exam.questionsAmount }} preguntas.</b></li>
+                        <li>Este exámen contiene <b>{{ exam.maxScore }} puntos.</b></li>
+                        <li>El tiempo establecido para este cuestionario es de <b>{{ exam.questionsAmount * 2 }} minutos.</b></li>
+                        <li>Solo tiene 2 intentos para realizar el exámen.</li>
+                        <!-- IF THE RESULT GIVES DECIMALS, IT SHOWS A MAXIMUM OF 2. IF IT DOES NOT CONTAIN DECIMALS, IT SHOWS THE WHOLE NUMBER. -->
+                        <li>Cada pregunta tiene <b>{{ (exam.maxScore/exam.questionsAmount) % 1 !== 0 ? (exam.maxScore/exam.questionsAmount).toFixed(2) : (exam.maxScore/exam.questionsAmount) }} puntos.</b></li>
+                        <li>Debes acertar en un 80% de las preguntas para aprobar el exámen.</li>
+                       <!-- <li>Este exámen contiene <b>{{ exam.maxScore/exam.questionsAmount }} puntos.</b></li>-->
+                    </ul>
+                    <mat-divider></mat-divider>
+                    <h2>Instrucciones del exámen:</h2>
+                    <ul class="ul">
+                        <li>Presione el botón <b>Empezar</b> para iniciar el exámen.</li>
+                        <li>El tiempo comenzará en el momento en que haga click en el botón de inicio.</li>
+                        <li>No puede reanudar este cuestionario si se interrumpe por algún motivo.</li>
+                        <li>Desplácese hacia abajo para pasar a la siguiente pregunta.</li>
+                        <li>Haga click en el botón enviar exámen una vez halla respondido todas las preguntas.</li>
+                        <li>El informe de la prueba se genera automáticamente en formato PDF.</li>
+                    </ul>
+                </mat-card-content>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button [routerLink]="'/start/'+examId" class="buttons mt10" mat-raised-button color="primary">
+        Comenzar exámen
+    </button>
+    <mat-divider class="mt20 final-divider"></mat-divider>
+</mat-card>
