@@ -1,10 +1,9 @@
-.card {
-    margin-top: 20px;
-    height: 650px;
-}
-
 .menu-header {
     margin-left: 25px !important;
+}
+
+.container-sidebar {
+    overflow-y: auto;
 }
 
 .section-icon {

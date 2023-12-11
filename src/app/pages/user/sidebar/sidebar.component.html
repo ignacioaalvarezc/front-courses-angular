@@ -1,8 +1,8 @@
-<mat-card class="card">
-    <mat-action-list>
-        <h2 class="menu-header">MENU</h2>
+<mat-card class="card h650 mt20">
+    <mat-action-list class="container-sidebar">
+        <h2 class="menu-header">Menu</h2>
         <mat-divider class="divider"></mat-divider>
-        <button mat-list-item routerLink="/user-dashboard/0" class="mt20">
+        <button mat-list-item routerLink="/" class="mt20">
             <mat-icon mat-list-icon class="section-icon">home</mat-icon> 
             <span class="section-header">Inicio</span>
         </button>
@@ -10,17 +10,24 @@
             <mat-icon mat-list-icon class="section-icon">account_circle</mat-icon> 
             <span class="section-header">Perfil</span>
         </button>
-        <button mat-list-item routerLink="/admin/view-users">
+        <button mat-list-item routerLink="/user-dashboard/0">
+            <mat-icon mat-list-icon class="section-icon">book</mat-icon> 
+            <span class="section-header">Cursos</span>
+        </button>
+        <button mat-list-item routerLink="/user-dashboard/0">
             <mat-icon mat-list-icon class="section-icon">quizz</mat-icon> 
             <span class="section-header">Exámenes</span>
-        </button>
-        <button [routerLink]="'/user-dashboard/'+c.categoryId" mat-list-item *ngFor = "let c of categories">
-            <mat-icon mat-list-icon class="section-icon">category</mat-icon> 
-            <span class="section-header">{{ c.title }}</span>
         </button>
         <button mat-list-item routerLink="/admin/profile">
             <mat-icon mat-list-icon class="section-icon">exit_to_app</mat-icon> 
             <span class="section-header">Salir</span>
+        </button>
+        <mat-divider class="divider mt10"></mat-divider>
+        <h2 class="menu-header mt20">Categorías disponibles</h2>
+        <mat-divider class="divider"></mat-divider>
+        <button class="mt10" [routerLink]="'/user-dashboard/'+c.categoryId" mat-list-item *ngFor = "let c of categories">
+            <mat-icon mat-list-icon class="section-icon">category</mat-icon> 
+            <span class="section-header">{{ c.title }}</span>
         </button>
     </mat-action-list>
 </mat-card>
