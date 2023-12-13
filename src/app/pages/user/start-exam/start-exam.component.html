@@ -1,4 +1,4 @@
-<div class="bootstrap-wrapper">
+<div class="bootstrap-wrapper" *ngIf = "!itWasSent">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
@@ -31,9 +31,29 @@
                     </mat-card-content>
                 </mat-card>
                 <div class="container text-center mt20 mb20">
-                    <button mat-raised-button color = "primary">Enviar respuesta</button>
+                    <button (click) = "sendExam()" mat-raised-button color = "primary">Enviar respuesta</button>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="bootstrap-wrapper" *ngIf = "itWasSent">
+    <div class="row mt20">
+        <div class="col-md-6 offset-md-3">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Resultado del exámen
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="text-center">
+                    <h1>Puntos conseguidos : {{ pointsAchieved }}</h1>
+                    <h1>Respuestas correctas : {{ correctAnswers }}</h1>
+                </mat-card-content>
+                <mat-card-actions class="text-center">
+                    <button mat-raised-button color="primary">Imprimir</button>
+                </mat-card-actions>
+            </mat-card>
         </div>
     </div>
 </div>

@@ -16,6 +16,8 @@ export class StartExamComponent implements OnInit {
   pointsAchieved = 0;
   correctAnswers = 0;
   attempts = 0;
+
+  itWasSent = false;
   
   constructor(private locationSt:LocationStrategy,
               private route:ActivatedRoute,
@@ -61,9 +63,21 @@ export class StartExamComponent implements OnInit {
       icon: 'info'
     }).then((result) => {
       if(result.isConfirmed){
+        this.itWasSent = true;
         this.questions.forEach((q:any) => {
-         
+          if(q.givenAnswer == q.answer) {
+            this.correctAnswers ++;
+            let score = this.questions[0].exam.maxScore/this.questions.length;
+            this.pointsAchieved += score;
+          }
+          if(q.givenAnswer.trim() != '') {
+            this.attempts ++;
+          }
         })
+        console.log("Respuestas correctas : " + this.correctAnswers);
+        console.log("Puntos conseguidos : " + this.pointsAchieved);
+        console.log("Intentos : " + this.attempts);
+        console.log(this.questions);
       }
     })
   }
