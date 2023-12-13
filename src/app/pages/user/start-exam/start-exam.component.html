@@ -1,1 +1,39 @@
-<p>start-exam works!</p>
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <h3>Instrucciones</h3>
+            </div>
+            <div class="col-md-8">
+                <ng-container *ngIf = "questions">
+                    <h1 class = "mt20">
+                        Exámen en curso: <b>{{ questions[0].exam.title }}</b>
+                    </h1>
+                </ng-container>
+                <mat-card *ngFor = "let q of questions; let i = index">
+                    <mat-card-content>
+                        <p><b>{{ i+1 }}) </b><span [innerHTML] = "q.content"></span></p>
+                        <mat-divider></mat-divider>
+                        <div class="row mt20">
+                            <div class="col-md-7 mt10">
+                                <input [(ngModel)] = "q.givenAnswer" type="radio" [value] = "q.firstOption" name = {{i}}> {{ q.firstOption }}
+                            </div>
+                            <div class="col-md-7 mt10">
+                                <input [(ngModel)] = "q.givenAnswer" type="radio" [value] = "q.secondOption" name = {{i}}> {{ q.secondOption }}
+                            </div>
+                            <div class="col-md-7 mt10">
+                                <input [(ngModel)] = "q.givenAnswer" type="radio" [value] = "q.thirdOption" name = {{i}}> {{ q.thirdOption }}
+                            </div>
+                            <div class="col-md-7 mt10">
+                                <input [(ngModel)] = "q.givenAnswer" type="radio" [value] = "q.fourthOption" name = {{i}}> {{ q.fourthOption }}
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                <div class="container text-center mt20 mb20">
+                    <button mat-raised-button color = "primary">Enviar respuesta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
