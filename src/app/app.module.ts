@@ -96,7 +96,9 @@ import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
     MatTooltipModule,
     MatProgressSpinnerModule,
     NgxUiLoaderModule,
-    NgxUiLoaderHttpModule
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true
+    })
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
