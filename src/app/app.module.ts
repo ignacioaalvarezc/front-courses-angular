@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -91,7 +92,8 @@ import { StartExamComponent } from './pages/user/start-exam/start-exam.component
     FormsModule,
     HttpClientModule,
     FlexLayoutModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatProgressSpinnerModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
