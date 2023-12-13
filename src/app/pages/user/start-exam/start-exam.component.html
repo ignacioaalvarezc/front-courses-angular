@@ -2,7 +2,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <h3>Instrucciones</h3>
+                <mat-card style="margin-top: 70px;">
+                    <mat-card-content>
+                        <h3><b>Instrucciones</b></h3>
+                        <ul>
+                            <li>No actualize la pagina.</li>
+                            <li>No cambies de pestaña.</li>
+                            <li>No minimices la ventana.</li>
+                        </ul>
+                    </mat-card-content>
+                </mat-card>
             </div>
             <div class="col-md-7">
                 <ng-container *ngIf = "questions">
@@ -67,7 +76,7 @@
                     <h1>Respuestas correctas : {{ correctAnswers }}</h1>
                 </mat-card-content>
                 <mat-card-actions class="text-center">
-                    <button mat-raised-button color="primary">Imprimir</button>
+                    <button (click)="printPage()" mat-raised-button color="primary">Imprimir</button>
                     <button mat-raised-button color="accent" [routerLink] = "'/user-dashboard/0'">Inicio</button>
                 </mat-card-actions>
             </mat-card>
