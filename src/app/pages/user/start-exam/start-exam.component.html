@@ -4,7 +4,7 @@
             <div class="col-md-2">
                 <h3>Instrucciones</h3>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <ng-container *ngIf = "questions">
                     <h1 class = "mt20">
                         Exámen en curso: <b>{{ questions[0].exam.title }}</b>
@@ -34,6 +34,22 @@
                     <button (click) = "sendExam()" mat-raised-button color = "primary">Enviar respuesta</button>
                 </div>
             </div>
+            <div class="col-md-3">
+                <mat-card style="margin-top:70px;">
+                    <mat-card-header>
+                        <mat-card-title>
+                            Temporizador
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            El exámen se enviará automaticamente cuando el temporizador llegue a 0
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h1 class="text-center">{{ getFormattedTime() }}</h1>
+                        <mat-spinner mode="determinate" style="margin: auto;" [value] = "(timer/(this.questions.length * 2 * 60)*100)"></mat-spinner>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
     </div>
 </div>
@@ -52,6 +68,7 @@
                 </mat-card-content>
                 <mat-card-actions class="text-center">
                     <button mat-raised-button color="primary">Imprimir</button>
+                    <button mat-raised-button color="accent" [routerLink] = "'/user-dashboard/0'">Inicio</button>
                 </mat-card-actions>
             </mat-card>
         </div>

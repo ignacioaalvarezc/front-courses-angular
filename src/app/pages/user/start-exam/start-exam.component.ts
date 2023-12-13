@@ -18,6 +18,7 @@ export class StartExamComponent implements OnInit {
   attempts = 0;
 
   itWasSent = false;
+  timer: any;
   
   constructor(private locationSt:LocationStrategy,
               private route:ActivatedRoute,
@@ -35,16 +36,29 @@ export class StartExamComponent implements OnInit {
       (data:any) => {
         console.log(data);
         this.questions = data;
+        this.timer = this.questions.length *2 * 60;
         this.questions.forEach((q:any) => {
           q['givenAnswer'] = '';
         })
         console.log(this.questions);
+        this.startTimer();
       },
       (error) => {
         console.log(error);
         Swal.fire('Error', 'Error al cargar las preguntas del exámen', 'error');
       }
     )
+  }
+
+  startTimer() {
+    let t = window.setInterval(() => {
+      if(this.timer <= 0) {
+        this.evaluateExam();
+        clearInterval(t);
+      } else {
+        this.timer --;
+      }
+    }, 1000)
   }
 
   lockBackButton() {
@@ -61,9 +75,15 @@ export class StartExamComponent implements OnInit {
       cancelButtonText: 'Cancelar',
       confirmButtonText: 'Enviar',
       icon: 'info'
-    }).then((result) => {
-      if(result.isConfirmed){
-        this.itWasSent = true;
+    }).then((e) => {
+      if(e.isConfirmed) {
+        this.evaluateExam();
+      }
+    })
+  }
+
+  evaluateExam() {
+    this.itWasSent = true;
         this.questions.forEach((q:any) => {
           if(q.givenAnswer == q.answer) {
             this.correctAnswers ++;
@@ -73,12 +93,17 @@ export class StartExamComponent implements OnInit {
           if(q.givenAnswer.trim() != '') {
             this.attempts ++;
           }
-        })
+        });
         console.log("Respuestas correctas : " + this.correctAnswers);
         console.log("Puntos conseguidos : " + this.pointsAchieved);
         console.log("Intentos : " + this.attempts);
         console.log(this.questions);
-      }
-    })
+  }
+  
+
+  getFormattedTime() {
+    let mm = Math.floor(this.timer/60);
+    let ss = this.timer - mm*60;
+    return `${mm} : min : ${ss} seg`;
   }
 }
