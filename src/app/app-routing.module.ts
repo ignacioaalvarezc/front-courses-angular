@@ -106,6 +106,10 @@ const routes: Routes = [
       {
         path:'instructions/:examId',
         component:InstructionsComponent
+      },
+      {
+        path:'profile',
+        component:ProfileComponent
       }
     ]
   },

@@ -2,8 +2,12 @@
     margin: -12px 15px;
 }
 
+.container-categories {
+    max-height: 517px;
+    overflow-y: auto;
+}
+
 .list-item-icon {
     display: flex;
     align-items: center;
 }
-

@@ -12,6 +12,10 @@
     overflow-y: auto;
 }
 
+.exam-card {
+    
+}
+
 .false-button {
     pointer-events: none;
 }
@@ -19,8 +23,9 @@
 .buttons-update-delete {
     display: flex;
     flex-direction: column;
-    margin-top: -55px;
-    margin-left: 180px !important;
+    margin-top: -55px !important;
+    margin-left: auto;
+    margin-right: 30px;
 }
 
 

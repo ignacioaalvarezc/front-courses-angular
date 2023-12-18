@@ -1,1 +1,27 @@
-<h1>Bienvenido al panel de administrador</h1>
+<mat-card class="mt20">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card-header>
+                    <mat-card-title>
+                        Bienvenido {{ user.name | titlecase }} !
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-subtitle class="ml20">Panel de administración</mat-card-subtitle>
+                <mat-card-content class="ml30">
+                    <h1></h1>
+                    <p></p>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <h1>Sus funciones :</h1>
+                    <ul>
+                        <li>Gestionar las categorías.</li>
+                        <li>Gestionar los exámenes.</li>
+                        <li>Asignar exámenes a distintas categorías.</li>
+                        <li>Gestionar las preguntas.</li>
+                        <li>Asignar preguntas a cada exámen.</li>
+                    </ul>
+                </mat-card-content>
+            </div>
+        </div></div>
+</mat-card>

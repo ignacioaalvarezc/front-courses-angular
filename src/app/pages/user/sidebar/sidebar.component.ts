@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CategoryService } from 'src/app/services/category.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-sidebar-user',
@@ -12,7 +13,8 @@ export class SidebarComponent implements OnInit {
   categories: any;
 
   constructor(private categoryService:CategoryService,
-              private snack:MatSnackBar
+              private snack:MatSnackBar,
+              private loginService:LoginService
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +29,11 @@ export class SidebarComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  public logout() {
+    this.loginService.logout();
+    window.location.reload();
   }
 
 }
