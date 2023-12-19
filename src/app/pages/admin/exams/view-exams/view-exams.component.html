@@ -14,7 +14,7 @@
                     <button mat-flat-button color="primary" [routerLink] = "'/admin/view-questions/'+e.examId+'/'+e.title">Questionario</button>
                     <button mat-stroked-button class="ml20 false-button">Puntos máximos: {{ e.maxScore }}</button>
                     <button mat-stroked-button class="ml20 false-button">Preguntas: {{ e.questionsAmount }}</button>
-                    <button mat-stroked-button class="ml20 false-button">{{ getStatusText(e.enabled) }}</button>
+                    <button mat-stroked-button class="ml20 false-button">{{ e.enabled ? "Activo" : "Desactivado" }}</button>
         
                     <div class="buttons-update-delete">
                         <button [routerLink] = "'/admin/exam/' +e.examId" mat-button color="primary" class="mb20">Actualizar</button>

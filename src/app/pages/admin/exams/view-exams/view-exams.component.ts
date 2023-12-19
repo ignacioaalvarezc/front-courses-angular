@@ -28,10 +28,6 @@ export class ViewExamsComponent implements OnInit {
     )
   }
 
-  getStatusText(enabled: boolean): string {
-    return enabled ? 'Activo' : 'Desactivado';
-  }
-
   deleteExam(examId:any) {
     Swal.fire({
       title: 'Eliminar exámen',

@@ -44,10 +44,10 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AdminGuard],
     children:[
-      {
+      /*{
         path:'profile',
         component:ProfileComponent
-      },
+      },*/
       {
         path: '',
         component: WelcomeComponent
@@ -106,10 +106,6 @@ const routes: Routes = [
       {
         path:'instructions/:examId',
         component:InstructionsComponent
-      },
-      {
-        path:'profile',
-        component:ProfileComponent
       }
     ]
   },
@@ -117,6 +113,10 @@ const routes: Routes = [
     path: "start/:examId",
     component: StartExamComponent,
     canActivate:[UserGuard]
+  },
+  {
+    path: "profile",
+    component: ProfileComponent
   }
 ];
 
