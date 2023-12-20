@@ -10,4 +10,11 @@
 .list-item-icon {
     display: flex;
     align-items: center;
+    width: 100%;
+}
+
+.right-items {
+    display: flex;
+    margin-left: auto;
+    margin-right: 30px;
 }

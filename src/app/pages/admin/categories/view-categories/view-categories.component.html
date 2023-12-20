@@ -11,6 +11,14 @@
                             <div mat-line>{{ c.title }}</div>
                             <div mat-line>{{ c.description }}</div>
                         </div>
+                        <div class="right-items">
+                            <button mat-icon-button class="edit-button" color="primary" matTooltip="Editar" [routerLink]="">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button mat-icon-button matTooltip="Eliminar" color="warn" (click) = "deleteCategory(c.categoryId)">
+                                <mat-icon>block</mat-icon>
+                            </button>
+                        </div>
                     </div>
                     <mat-divider></mat-divider>
                 </ng-container>
