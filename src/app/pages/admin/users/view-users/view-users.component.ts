@@ -43,6 +43,33 @@ export class ViewUsersComponent implements OnInit {
     });
   }
 
+  toggleUserStatus(userId: any, newStatus: boolean) {
+    const actionText1 = newStatus ? 'desbloquear' : 'bloquear';
+    const actionText2 = newStatus ? 'desbloqueado' : 'bloqueado';
+
+    Swal.fire({
+      title: `¿Estas seguro de que quieres ${actionText1} al usuario?`,
+      text: `El usuario será ${actionText2} y no podra iniciar sesión.`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if(result.isConfirmed) {
+        this.userService.toggleUserStatus(userId, newStatus).subscribe(() => {
+          Swal.fire({
+            title: `Usuario ${actionText2} con éxito`,
+            icon: `success`,
+            confirmButtonText: 'OK'
+          }).then(() => {
+            this.loadUsers();
+          });
+        });
+        window.location.reload();
+      }
+    });
+  }
+
 /*
   ngOnInit(): void {
     this.loadUsers();

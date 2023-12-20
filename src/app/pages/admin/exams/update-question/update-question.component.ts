@@ -19,7 +19,7 @@ export class UpdateQuestionComponent implements OnInit {
               private questionService:QuestionService,
               private router:Router,
               private location:Location
-  ) { }
+              ) { }
 
   ngOnInit(): void {
     this.questionId = this.route.snapshot.params['questionId'];
@@ -37,7 +37,7 @@ export class UpdateQuestionComponent implements OnInit {
   public updateQuestionData() {
     this.questionService.updateQuestion(this.question).subscribe(
       (data) => {
-        Swal.fire('Pregunta actualzada', 'La pregunta ha sido actualizada con éxito', 'success').then((e) => {
+        Swal.fire('Pregunta actualizada', 'La pregunta ha sido actualizada con éxito', 'success').then((e) => {
           this.router.navigate(['/admin/view-questions/'+this.question.exam.examId+'/'+this.question]);
         })
       }

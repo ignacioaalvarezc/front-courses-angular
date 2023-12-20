@@ -21,4 +21,17 @@ export class UserService {
   public saveAdmin(user:any): Observable<any> {
     return this.http.post(`${baserUrl}/users/save-admin`, user);
   }
+
+  public getUser(userId:any) {
+    return this.http.get(`${baserUrl}/users/${userId}`);
+  }
+
+  public updateUser(userId: any, user: any): Observable<any> {
+    return this.http.put(`${baserUrl}/users/${userId}`, user);
+  }
+
+  public toggleUserStatus(userId: any, newStatus: boolean): Observable<any> {
+    return this.http.put(`${baserUrl}/users/toggle-status/${userId}`, { enabled: newStatus });
+  }
+
 }

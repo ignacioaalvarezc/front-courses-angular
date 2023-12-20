@@ -43,7 +43,7 @@ export class UpdateExamComponent implements OnInit {
 
   public updateExam() {
     this.examService.updateExam(this.exam).subscribe(
-      (date) => {
+      (data) => {
         Swal.fire('Exámen actualizado', 'El exámen ha sido actualizado con éxito', 'success').then(
           (e) => {
             this.router.navigate(['/admin/view-exams']);

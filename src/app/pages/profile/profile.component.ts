@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -12,14 +12,19 @@ export class ProfileComponent implements OnInit {
   user:any = null;
 
   constructor(private loginService:LoginService,
-              private location:Location) { }
+              private router:Router) { }
 
   ngOnInit(): void {
     this.user = this.loginService.getUser();
   }
-
+  
   goBack(): void {
-    this.location.back();
-  }
+    const role = this.loginService.getUserRole();
 
+    if (role === 'ADMIN') {
+      this.router.navigate(['/admin']);
+    } else if (role === 'USER') {
+      this.router.navigate(['/user-dashboard/0']);
+    }
+  }
 }

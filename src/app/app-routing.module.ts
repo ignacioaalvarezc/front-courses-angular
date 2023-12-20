@@ -22,6 +22,7 @@ import { UpdateQuestionComponent } from './pages/admin/exams/update-question/upd
 import { LoadExamComponent } from './pages/user/load-exam/load-exam.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
+import { UpdateUsersComponent } from './pages/admin/users/update-users/update-users.component';
 
 const routes: Routes = [
   {
@@ -44,10 +45,6 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AdminGuard],
     children:[
-      /*{
-        path:'profile',
-        component:ProfileComponent
-      },*/
       {
         path: '',
         component: WelcomeComponent
@@ -63,6 +60,10 @@ const routes: Routes = [
       {
         path: 'view-users',
         component: ViewUsersComponent
+      },
+      {
+        path: 'user/:userId',
+        component: UpdateUsersComponent
       },
       {
         path: 'add-users',

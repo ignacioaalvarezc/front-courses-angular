@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baserUrl from './helper';
 import { Subject } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -68,5 +69,17 @@ export class LoginService {
     return user.authorities[0].authority;
   }
 
-  
+  private handleLoginResponse(response: any) {
+    if(response instanceof HttpErrorResponse) {
+      if(response.status === 401 && response.error === 'Usuario deshabilitado') {
+        Swal.fire('Usuario bloqueado', 'Su cuenta ha sido deshabilitada. Comuniquese con soporte para mas información.', 'error');
+      } else {
+        Swal.fire('Error de autenticación', 'Credenciales inválidas', 'error');
+      }
+    } else {
+      this.loginUser(response.token);
+      this.loginStatusSubject.next(true);
+      Swal.fire('Inicio de sesión exitoso', '¡Bienvenido!', 'success');
+    }
+  }  
 }

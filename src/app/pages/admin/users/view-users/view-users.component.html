@@ -6,18 +6,18 @@
             <mat-list>
                 <ng-container *ngFor = "let u of users">
                     <div class="list-item-icon mt10">
-                        <mat-icon mat-list-icon class="mr20">person</mat-icon>
+                        <mat-icon mat-list-icon class="mr20" [ngClass]="{'text-green': u.enabled, 'text-red': !u.enabled}">person</mat-icon>
                         <div class="item-details mb10">
-                            <div mat-line class="info">Id: {{ u.userId }}</div>
+                            <div mat-line class="info">Estado: {{ u.enabled ? "Activo" : "Bloqueado" }}</div>
                             <div mat-line>Username: {{ u.username }}</div>
                             <div mat-line>Nombre: {{ u.name | titlecase }}  {{ u.lastName | titlecase }}</div>
                             <div class="right-items">
                                 <div mat-line>Rol: {{ u.authorities[0].authority }}</div>
-                                <button mat-icon-button class="edit-button" color="primary" matTooltip="Editar">
+                                <button mat-icon-button class="edit-button" color="primary" matTooltip="Editar" [routerLink]="['/admin/user', u.userId]">
                                     <mat-icon>edit</mat-icon>
                                 </button>
-                                <button mat-icon-button color="warn" matTooltip="Deshabilitar">
-                                    <mat-icon>block</mat-icon>
+                                <button mat-icon-button [matTooltip]="u.enabled ? 'Bloquear' : 'Desbloquear'" (click)="toggleUserStatus(u.userId, !u.enabled)">
+                                    <mat-icon [ngClass]="{'text-green': !u.enabled, 'text-red': u.enabled}">{{ u.enabled ? 'block' : 'check_circle' }}</mat-icon>
                                 </button>
                             </div>
                         </div>

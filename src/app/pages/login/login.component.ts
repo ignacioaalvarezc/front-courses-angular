@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -59,11 +60,22 @@ export class LoginComponent implements OnInit {
         });
       }, (error) => {
         console.log(error);
-        this.snack.open('Nombre de usuario o contraseña incorrectos', 'Aceptar', {
-          duration: 3000
-        })
+        if(error.status === 401) {
+          // BLOCKED USER
+          this.showSwalError('El usuario esta bloqueado. Comuniquese con soporte para mas información');
+        } else {
+          this.showSwalError('Nombre de usuario o contraseña incorrectos');
+        }
       }
-    )
+    );
+  }
+
+  private showSwalError(message: string): void {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error de inicio de sesion',
+      text: message
+    });
   }
 
 }
