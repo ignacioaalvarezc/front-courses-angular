@@ -34,4 +34,10 @@ export class UserService {
     return this.http.put(`${baserUrl}/users/toggle-status/${userId}`, { enabled: newStatus });
   }
 
+  public uploadImage(userId: number, file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData. append('file', file, file.name);
+    return this.http.post(`${baserUrl}/${userId}/image`, formData);
+  }
+
 }

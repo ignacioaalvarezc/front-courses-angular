@@ -1,17 +1,20 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baserUrl from './helper';
-import { Subject } from 'rxjs';
+import { Observable, Subject, filter, forkJoin, switchMap, take } from 'rxjs';
 import Swal from 'sweetalert2';
-
+import { NgZone } from '@angular/core';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
   public loginStatusSubject = new Subject<boolean>();
-
-  constructor(private http:HttpClient) { }
+  
+  constructor(private http:HttpClient,
+              private zone: NgZone,
+              private router:Router) { }
 
   // GENERANDO EL TOKEN.
   public generateToken(loginData:any) {
@@ -25,6 +28,7 @@ export class LoginService {
   // INICIAR SESION GUARDANDO EL TOKEN EN EL LOCALSTORAGE.
   public loginUser(token:any) {
     localStorage.setItem('token', token);
+    this.zone.run(() => {});
     return true;
   }
 
@@ -41,6 +45,7 @@ export class LoginService {
   public logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    this.router.navigate(['/admin']);
     return true;
   }
 
@@ -64,9 +69,9 @@ export class LoginService {
   }
 
   // OBTIENE EL ROL DEL USUARIO.
-  public getUserRole() {
+  public getUserRole(): string | null {
     let user = this.getUser();
-    return user.authorities[0].authority;
+    return user ? user.authorities[0].authority : null;
   }
 
   private handleLoginResponse(response: any) {

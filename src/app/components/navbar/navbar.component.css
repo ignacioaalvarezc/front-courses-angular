@@ -1,6 +1,7 @@
 /* STYLES FOR THE NAVIGATION BAR */
 .navbar {
     height:50px;
+    background: #263238;
 }
 
 /* FLEXIBLE SPACER TO PUSH CONTENT TO THE RIGHT*/
@@ -16,9 +17,12 @@
 /* ADJUSTMENTS FOR THE NAVIGATION BAR HEADER */
 .navbar-header {
     margin-top: 5px;
+    color: #e0d7d7;
+    margin-left: 60px;
 }
 
 /* STYLES FOR THE NAVIGATION BAR TEXT */
 .login-font {
     font-size: 17px;
+    color: #e0d7d7;
 }

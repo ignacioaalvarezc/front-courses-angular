@@ -30,7 +30,6 @@ import { authInterceptorProviders } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/categories/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/categories/add-category/add-category.component';
@@ -42,13 +41,14 @@ import { UpdateExamComponent } from './pages/admin/exams/update-exam/update-exam
 import { ViewQuestionsComponent } from './pages/admin/exams/view-questions/view-questions.component';
 import { AddQuestionComponent } from './pages/admin/exams/add-question/add-question.component';
 import { UpdateQuestionComponent } from './pages/admin/exams/update-question/update-question.component';
-import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
 import { LoadExamComponent } from './pages/user/load-exam/load-exam.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 import { UpdateUsersComponent } from './pages/admin/users/update-users/update-users.component';
+import { UploadImageComponent } from './pages/user/upload-image/upload-image/upload-image.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,6 @@ import { UpdateUsersComponent } from './pages/admin/users/update-users/update-us
     DashboardComponent,
     UserDashboardComponent,
     ProfileComponent,
-    SidebarComponent,
     WelcomeComponent,
     ViewCategoriesComponent,
     AddCategoryComponent,
@@ -72,12 +71,13 @@ import { UpdateUsersComponent } from './pages/admin/users/update-users/update-us
     ViewQuestionsComponent,
     AddQuestionComponent,
     UpdateQuestionComponent,
-    UserSidebar,
     LoadExamComponent,
     InstructionsComponent,
     StartExamComponent,
     UserProfileComponent,
-    UpdateUsersComponent
+    UpdateUsersComponent,
+    UploadImageComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

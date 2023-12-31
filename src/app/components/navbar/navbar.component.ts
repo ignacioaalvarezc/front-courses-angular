@@ -30,6 +30,6 @@ export class NavbarComponent implements OnInit {
   // LOGOUT FUNCTION
   public logout(){
     this.login.logout(); // CALL THE LOGOUT METHOD FROM THE LOGIN SERVICE
-    window.location.reload(); // RELOAD THE WINDOW AFTER LOGOUT
+    window.location.reload();
   }
 }

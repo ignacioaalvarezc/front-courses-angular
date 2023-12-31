@@ -1,5 +1,5 @@
 <!-- ANGULAR MATERIAL DESIGN TOOLBAR -->
-<mat-toolbar class="navbar" color = "primary" fxLayout="row" fxLayoutAlign="start center">
+<mat-toolbar class="navbar" fxLayout="row" fxLayoutAlign="start center">
     <!-- ICON AND LINK TO THE HOME PAGE -->
     <a [routerLink] = "'/'" mat-icon-button class="example-icon" arial-label="Example icon-button with menu icon">
         <mat-icon class="navbar-icon">library_books</mat-icon>
@@ -56,7 +56,7 @@
             <button
                 *ngIf="login.isLoggedIn() && user"
                 mat-menu-item
-                routerLink="/admin/profile">
+                routerLink="/profile">
                 <span class="login-font">{{ user.username | titlecase }}</span>
             </button>
             <!-- MENU -->
