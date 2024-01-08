@@ -1,13 +1,21 @@
+.login-card {
+    margin-top: 60px;
+}
+
 .center {
     margin: auto;
     display: block;
 }
 
-.mt40 {
-    margin-top: 40px;
+.btns {
+    margin-bottom: 40px;
 }
 
 .btn-into {
     background: #263238;
     color: white;
+}
+
+.btns-sign-back {
+    margin-left: 20px;
 }

@@ -1,12 +1,5 @@
 <!-- ANGULAR MATERIAL DESIGN TOOLBAR -->
-<mat-toolbar class="navbar" fxLayout="row" fxLayoutAlign="start center">
-    <!-- ICON AND LINK TO THE HOME PAGE -->
-    <a [routerLink] = "'/'" mat-icon-button class="example-icon" arial-label="Example icon-button with menu icon">
-        <mat-icon class="navbar-icon">library_books</mat-icon>
-    </a>
-    <!-- TOOLBAR TITLE -->
-    <span class="navbar-header">Portal de exámenes</span>
-    <!-- FLEXIBLE SPACER FOR RIGHT ALIGNMENT -->
+<mat-toolbar class="navbar" fxLayout="row" fxLayoutAlign="start center" *ngIf="!login.isLoggedIn()">
     <span class="example-spacer"></span>
     <!-- BUTTON SECTION FOR MEDIUM AND BIG SCREENS -->
     <div fxHide.lt-md>

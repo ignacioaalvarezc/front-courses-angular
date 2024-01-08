@@ -29,6 +29,23 @@
     </div>  
     <div *ngIf = "isUser">
         <ul class="sidenav-nav">
+            <li class="sidenav-nav-item" *ngFor="let data of userNavData">
+                <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <mat-icon class="sidenav-link-icon">{{data.icon}}</mat-icon>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+                </a>
+            </li>
+            <li class="sidenav-nav-item">
+                <a class="sidenav-nav-link" (click)="logout()" 
+                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <mat-icon class="sidenav-link-icon">exit_to_app</mat-icon>
+                    <span class="sidenav-link-text" *ngIf="collapsed">Salir</span>
+                </a>
+            </li>
+            <!--
             <li class="sidenav-nav-item">
                 <a class="sidenav-nav-link" [routerLink]="['/']" 
                 routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -64,6 +81,7 @@
                 <span class="sidenav-link-text" *ngIf="collapsed">{{ c.title }}</span>
             </a>
             </li>
+            -->
         </ul>
     </div>
 </div>

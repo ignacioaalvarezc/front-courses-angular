@@ -107,7 +107,7 @@ const routes: Routes = [
       {
         path:'instructions/:examId',
         component:InstructionsComponent
-      }
+      },
     ]
   },
   {

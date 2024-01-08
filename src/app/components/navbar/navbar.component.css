@@ -9,18 +9,6 @@
     flex: 1 1 auto;
 }
 
-/* ADJUSTMENTS FOR THE NAVIGATION BAR ICON */
-.navbar-icon {
-    margin-top: 2px;
-}
-
-/* ADJUSTMENTS FOR THE NAVIGATION BAR HEADER */
-.navbar-header {
-    margin-top: 5px;
-    color: #e0d7d7;
-    margin-left: 60px;
-}
-
 /* STYLES FOR THE NAVIGATION BAR TEXT */
 .login-font {
     font-size: 17px;

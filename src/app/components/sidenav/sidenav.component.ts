@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { LoginService } from 'src/app/services/login.service';
 import { adminNavData } from './admin-navData';
+import { userNavData } from './user-navData';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 
 interface SideNavToggle {
@@ -46,6 +47,7 @@ export class SidenavComponent implements OnInit{
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   adminNavData = adminNavData;
+  userNavData = userNavData;
   screenWidth = 0;
 
   isAdmin: boolean = false;
@@ -78,17 +80,6 @@ export class SidenavComponent implements OnInit{
         this.isUser = this.loginService.getUserRole() === 'USER';
       }
     });  
-    this.categoryService.listCategories().subscribe(
-      (data:any) => {
-        this.categories = data;
-      },
-      (error) => {
-        this.snack.open('Error al cargar las categorias', '', {
-          duration: 3000
-        })
-        console.log(error);
-      }
-    )
   }
 
 
