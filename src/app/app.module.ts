@@ -49,6 +49,7 @@ import { UserProfileComponent } from './pages/user/user-profile/user-profile.com
 import { UpdateUsersComponent } from './pages/admin/users/update-users/update-users.component';
 import { UploadImageComponent } from './pages/user/upload-image/upload-image/upload-image.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { BodyComponent } from './components/body/body.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     UserProfileComponent,
     UpdateUsersComponent,
     UploadImageComponent,
-    SidenavComponent
+    SidenavComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,

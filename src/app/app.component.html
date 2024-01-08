@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 <ngx-ui-loader 
     fgsColor = "#fbfffb"
     pbColor = "#fbfffb"
@@ -8,4 +9,8 @@
 <div ngxUiLoaderBlurred (blur) = "10"></div>
 <app-navbar></app-navbar>
 <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+></app-body>
 <router-outlet></router-outlet>

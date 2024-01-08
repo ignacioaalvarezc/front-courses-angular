@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  user: any; // VARIABLE TO STORE USER INFORMATION
+  user: any = new Object(); // VARIABLE TO STORE USER INFORMATION
 
   constructor(public login:LoginService,
               private router:Router) {}

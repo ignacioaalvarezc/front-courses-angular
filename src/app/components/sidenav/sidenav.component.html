@@ -1,54 +1,21 @@
-<div  *ngIf="shouldShowSidebar()" class="sidenav" [ngClass]="{'sidenav-collapsed': collapsed}">
+<div  *ngIf="shouldShowSidebar()" class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapse()">A</button>
-        <div class="logo-text" *ngIf="collapsed">Angular</div>
-        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">Angular</div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
             <mat-icon class="close-icon">close</mat-icon>
         </button> 
     </div>
     <div>
     <div *ngIf = "isAdmin">
         <ul class="sidenav-nav">
-            <li class="sidenav-nav-item">
-                <a class="sidenav-nav-link" [routerLink]="['/admin']" 
-                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <mat-icon class="sidenav-link-icon">home</mat-icon>
-                    <span class="sidenav-link-text" *ngIf="collapsed">Inicio</span>
-                </a>
-            </li>
-            <li class="sidenav-nav-item">
-                <a class="sidenav-nav-link" [routerLink]="['/profile']" 
-                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <mat-icon class="sidenav-link-icon">account_circle</mat-icon>
-                    <span class="sidenav-link-text" *ngIf="collapsed">Mi perfil</span>
-                </a>
-            </li>
-            <li class="sidenav-nav-item">
-                <a class="sidenav-nav-link" [routerLink]="['/admin/view-users']" 
-                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <mat-icon class="sidenav-link-icon">person</mat-icon>
-                    <span class="sidenav-link-text" *ngIf="collapsed">Usuarios</span>
-                </a>
-            </li>
-            <li class="sidenav-nav-item">
-                <a class="sidenav-nav-link" [routerLink]="['/admin/categories']" 
-                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <mat-icon class="sidenav-link-icon">list</mat-icon>
-                    <span class="sidenav-link-text" *ngIf="collapsed">Categorías</span>
-                </a>
-            </li>
-            <li class="sidenav-nav-item">
-                <a class="sidenav-nav-link" [routerLink]="['/admin']" 
-                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <mat-icon class="sidenav-link-icon">menu_books</mat-icon>
-                    <span class="sidenav-link-text" *ngIf="collapsed">Cursos</span>
-                </a>
-            </li>
-            <li class="sidenav-nav-item">
-                <a class="sidenav-nav-link" [routerLink]="['/admin/view-exams']" 
-                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <mat-icon class="sidenav-link-icon">quiz</mat-icon>
-                    <span class="sidenav-link-text" *ngIf="collapsed">Examenes</span>
+            <li class="sidenav-nav-item" *ngFor="let data of adminNavData">
+                <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <mat-icon class="sidenav-link-icon">{{data.icon}}</mat-icon>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
                 </a>
             </li>
             <li class="sidenav-nav-item">
