@@ -6,6 +6,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { adminNavData } from './admin-navData';
 import { userNavData } from './user-navData';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import Swal from 'sweetalert2';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -15,7 +16,7 @@ interface SideNavToggle {
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css'],
+  styleUrls: ['./sidenav.component.scss'],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [
@@ -98,8 +99,19 @@ export class SidenavComponent implements OnInit{
   }  
 
   public logout() {
-    this.loginService.logout();
-    this.router.navigate(['/login'])
-    window.location.reload();
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¿Quieres cerrar tu sesión?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, cerrar sesión'
+    }).then((result) => {
+      if(result.isConfirmed) {
+        this.loginService.logout();
+        this.router.navigate(['/login'])
+      }
+    });
   }
 }

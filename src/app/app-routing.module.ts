@@ -23,6 +23,7 @@ import { LoadExamComponent } from './pages/user/load-exam/load-exam.component';
 import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { StartExamComponent } from './pages/user/start-exam/start-exam.component';
 import { UpdateUsersComponent } from './pages/admin/users/update-users/update-users.component';
+import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component';
 
 const routes: Routes = [
   {
@@ -100,6 +101,10 @@ const routes: Routes = [
     component: UserDashboardComponent,
     canActivate: [UserGuard],
     children : [
+      {
+        path: 'user-welcome',
+        component:UserWelcomeComponent
+      },
       {
         path: ':catId',
         component:LoadExamComponent

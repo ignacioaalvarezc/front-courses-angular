@@ -50,6 +50,11 @@ import { UpdateUsersComponent } from './pages/admin/users/update-users/update-us
 import { UploadImageComponent } from './pages/user/upload-image/upload-image/upload-image.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BodyComponent } from './components/body/body.component';
+import { HeaderComponent } from './components/header/header.component';
+
+import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkMenuModule } from '@angular/cdk/menu';
+import { UserWelcomeComponent } from './pages/user/user-welcome/user-welcome.component'
 
 @NgModule({
   declarations: [
@@ -79,7 +84,9 @@ import { BodyComponent } from './components/body/body.component';
     UpdateUsersComponent,
     UploadImageComponent,
     SidenavComponent,
-    BodyComponent
+    BodyComponent,
+    HeaderComponent,
+    UserWelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -101,6 +108,8 @@ import { BodyComponent } from './components/body/body.component';
     FlexLayoutModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
+    OverlayModule,
+    CdkMenuModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule.forRoot({
       showForeground: true

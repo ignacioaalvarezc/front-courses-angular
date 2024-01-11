@@ -9,7 +9,12 @@
     <div ngxUiLoaderBlurred (blur) = "10"></div>
     <app-navbar></app-navbar>
     <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
-    <app-body 
+    <app-header
+        *ngIf = "!isLoginPage && !(getCurrentUrl() === '/')"
+        [collapsed]="isSideNavCollapsed"
+        [screenWidth]="screenWidth"
+    ></app-header>
+    <app-body
         [collapsed]="isSideNavCollapsed"
         [screenWidth]="screenWidth"
     ></app-body>

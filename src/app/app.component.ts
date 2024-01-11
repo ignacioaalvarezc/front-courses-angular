@@ -25,7 +25,11 @@ export class AppComponent implements OnInit{
       if (event instanceof NavigationEnd) {
         this.isLoginPage = this.router.url === '/login';
       }
-    })
+    });
+  }
+
+  getCurrentUrl(): string {
+    return this.router.url;
   }
 
   onToggleSideNav(data: SideNavToggle): void {

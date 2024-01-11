@@ -1,6 +1,6 @@
 export const userNavData = [
     {
-        routeLink: '',
+        routeLink: 'user-dashboard/user-welcome',
         icon: 'home',
         label: 'Inicio'
     },
